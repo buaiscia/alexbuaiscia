@@ -1,0 +1,16 @@
+<% include ./partials/header %>
+
+<h1><%=spacePost.name%></h1>
+
+<img src="<%= spacePost.image %>">
+
+<p><%= spacePost.description %></p>
+
+<% spacePost.comments.forEach(function(comment){ %>
+    <p>
+        <strong><%= comment.author %></strong> - <%= comment.text %>
+    </p>
+<% }) %>
+
+
+<% include ./partials/footer %>
