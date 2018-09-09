@@ -4,6 +4,11 @@ var express = require("express"),
     app = express(),
     bodyParser = require("body-parser"),
     mongoose = require("mongoose"),
+    passport = require("passport"),
+    LocalStrategy = require("passport-local"),
+    Campground = require("./models/spacePost"),
+    Comment = require("./models/spaceComment"),
+    User = require("./models/user"),
     seedDB = require("./seeds");
 
 
@@ -39,6 +44,24 @@ const spaceCommentRoute = require('./routes/space/comments');
 // DEV ROUTE
 
 // const landingDev = require('./routes/dev/landingDev');
+
+
+// PASSPORT CONFIGURATION
+app.use(require("express-session")({
+    secret: "Once again Rusty wins cutest dog!",
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+app.use(function(req, res, next) {
+    res.locals.currentUser = req.user;
+    next();
+});
 
 
 // USING ROUTES
