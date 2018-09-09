@@ -11,9 +11,8 @@ var express = require("express"),
 
 // SETTING OTHER STUFF
 
-mongoose.connect("mongoDB://localhost:27017/alexDB");
+mongoose.connect("mongodb://localhost:27017/alexDB", { useNewUrlParser: true });
 
-// { useNewUrlParser: true }
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
