@@ -1,20 +1,36 @@
 <% include ../partials/header %>
 
-<h1><%=spacePost.name%></h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="thumbnail">
+                <h1><%=spacePost.name%></h1>
+                <img class="img-responsive" src="<%= spacePost.image %>">
+                <div class="caption-full">
+                    <p><%= spacePost.description %></p>
+                </div>
+                <div>
+                     <p><%= spacePost.text %></p>
 
-<img src="<%= spacePost.image %>">
+                </div>
 
-<p><%= spacePost.description %></p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="thumbnail">
+                <p><a class="btn btn-success" href="/spaceblog/<%= spacePost._id %>/comments/new">Add New Comment</a></p>
+                <% spacePost.comments.forEach(function(comment){ %>
+                    <p>
+                        <strong><%= comment.author %></strong> - <%= comment.text %>
+                    </p>
+                <% }) %>
 
-<p><a class="btn btn-success" href="/spaceblog/<%= spacePost._id %>/comments/new">Add New Comment</a></p>
+            </div>
+        </div>
+    </div>
 
-<% spacePost.comments.forEach(function(comment){ %>
-    <p>
-        <strong><%= comment.author %></strong> - <%= comment.text %>
-    </p>
-<% }) %>
-
-
-
+</div>
 
 <% include ../partials/footer %>
