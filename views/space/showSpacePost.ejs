@@ -6,11 +6,15 @@
 
 <p><%= spacePost.description %></p>
 
+<p><a class="btn btn-success" href="/spaceblog/<%= spacePost._id %>/comments/new">Add New Comment</a></p>
+
 <% spacePost.comments.forEach(function(comment){ %>
     <p>
         <strong><%= comment.author %></strong> - <%= comment.text %>
     </p>
 <% }) %>
+
+
 
 
 <% include ../partials/footer %>

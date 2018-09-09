@@ -33,6 +33,7 @@ const indexRoute = require("./routes/index");
 // SPACE ROUTE
 
 const spaceBlogRoute = require('./routes/space/spaceBlog');
+const spaceCommentRoute = require('./routes/space/comments');
 
 
 // DEV ROUTE
@@ -46,6 +47,7 @@ app.use('/', indexRoute);
 // app.use('/pubblicazioni', publishedRoute);
 // app.use('/scritturablog', blogWritingRoute);
 app.use('/spaceblog', spaceBlogRoute);
+app.use('/spaceBlog/:id/comments', spaceCommentRoute);
 // app.use('/dev', landingDev);
 
 

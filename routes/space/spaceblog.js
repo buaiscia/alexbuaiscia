@@ -1,6 +1,6 @@
-var express = require("express"),
-    router = express.Router();
-var bodyParser = require("body-parser"),
+const express = require("express"),
+    router = express.Router(),
+    bodyParser = require("body-parser"),
     spacePost = require("../../models/spacePost"),
     seedDB = require("../../seeds");
 
