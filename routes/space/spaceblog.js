@@ -14,7 +14,7 @@ router.get("/", function(req, res) {
         if (err) {
             console.log(err);
         } else {
-            res.render("spaceblog", { spacePosts: allPosts });
+            res.render("space/spaceblog", { spacePosts: allPosts });
 
         }
     });
@@ -38,7 +38,7 @@ router.post("/", function(req, res) {
 
 
 router.get("/new", function(req, res) {
-    res.render("newPost");
+    res.render("space/newPost");
 });
 
 
@@ -49,7 +49,7 @@ router.get("/:id", function(req, res) {
         } else {
             console.log(foundSpacePost)
                 //render show template with that campground
-            res.render("showSpacePost", { spacePost: foundSpacePost });
+            res.render("space/showSpacePost", { spacePost: foundSpacePost });
         }
     });
 });
