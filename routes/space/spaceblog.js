@@ -2,7 +2,8 @@ const express = require("express"),
     router = express.Router(),
     bodyParser = require("body-parser"),
     spacePost = require("../../models/spacePost"),
-    seedDB = require("../../seeds");
+    middleware = require("../../middleware");
+// seedDB = require("../../seeds");
 
 
 // ROOT ROUTE
@@ -22,7 +23,7 @@ router.get("/", function(req, res) {
 
 // CREATE POST 
 
-router.post("/", isLoggedIn, function(req, res) {
+router.post("/", middleware.isLoggedIn, function(req, res) {
     var name = req.body.name;
     var image = req.body.image;
     var description = req.body.description;
@@ -50,7 +51,7 @@ router.post("/", isLoggedIn, function(req, res) {
 
 //FORM FOR NEW POST
 
-router.get("/new", isLoggedIn, function(req, res) {
+router.get("/new", middleware.isLoggedIn, function(req, res) {
     res.render("space/newPost");
 });
 
@@ -67,13 +68,45 @@ router.get("/:id", function(req, res) {
     });
 });
 
-//middleware
-function isLoggedIn(req, res, next) {
-    if (req.isAuthenticated()) {
-        return next();
-    }
-    res.redirect("/login");
-}
+// EDIT POST ROUTE
+
+router.get("/:id/edit", middleware.checkSpacePostOwnership, function(req, res) {
+    spacePost.findById(req.params.id, function(err, foundSpacePost) {
+        res.render("space/edit", { spacePost: foundSpacePost });
+    })
+})
+
+// UPDATE POST ROUTE
+
+router.put("/:id", middleware.checkSpacePostOwnership, function(req, res) {
+    spacePost.findByIdAndUpdate(req.params.id, req.body.spacePost, function(err, updatedSpacePost) {
+        if (err) {
+            res.redirect("/spaceblog");
+        } else {
+            res.redirect("/spaceblog/" + req.params.id);
+        }
+    });
+});
+
+// DESTROY POST ROUTE
+
+router.delete("/:id", middleware.checkSpacePostOwnership, function(req, res) {
+    spacePost.findByIdAndRemove(req.params.id, function(err) {
+        if (err) {
+            res.redirect("/spaceBlog");
+        } else {
+            res.redirect("/spaceBlog");
+        }
+    })
+})
+
+// //middleware
+// function isLoggedIn(req, res, next) {
+//     if (req.isAuthenticated()) {
+//         return next();
+//     }
+//     res.redirect("/login");
+// }
 
 
 module.exports = router;
