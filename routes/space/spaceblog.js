@@ -11,11 +11,16 @@ const express = require("express"),
 //INDEX - show all space posts
 router.get("/", function(req, res) {
     //get space posts from DB
+    var username = [];
+    if (typeof req.user !== "undefined") {
+        username = req.user.username;
+    }
     spacePost.find({}, function(err, allPosts) {
         if (err) {
             console.log(err);
         } else {
-            res.render("space/spaceblog", { spacePosts: allPosts });
+
+            res.render("space/spaceblog", { spacePosts: allPosts, username: username });
 
         }
     });
