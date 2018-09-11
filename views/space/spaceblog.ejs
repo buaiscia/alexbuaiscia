@@ -5,7 +5,7 @@
      <header class="jumbotron">
          <div class="container">
              <h1>Space blog</h1>
-             <% if(currentUser && username === "alex"){ %>
+             <% if(currentUser && currentUser.username === "alex"){ %>
             <p>
                 <a class="btn btn-primary btn-large" href="/spaceblog/new">Add New Space Post</a>
             </p>
