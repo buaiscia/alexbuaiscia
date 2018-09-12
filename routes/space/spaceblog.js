@@ -59,8 +59,9 @@ router.get("/new", middleware.isLoggedIn, function(req, res) {
 
 router.get("/:id", function(req, res) {
     spacePost.findById(req.params.id).populate("comments").exec(function(err, foundSpacePost) {
-        if (err) {
-            console.log(err);
+        if (err || !foundSpacePost) {
+            req.flash("error", "Post not found");
+            res.redirect("back");
         } else {
             console.log(foundSpacePost)
             res.render("space/showSpacePost", { spacePost: foundSpacePost });

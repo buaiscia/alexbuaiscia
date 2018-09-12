@@ -13,8 +13,9 @@ const express = require("express"),
 
 router.get("/new", middleware.isLoggedIn, function(req, res) {
     spacePost.findById(req.params.id, function(err, spacePost) {
-        if (err) {
-            console.log(err);
+        if (err || !spacePost) {
+            req.flash("error", "Post not found")
+            res.redirect("back");
         } else {
             res.render("comments/new", { spacePost: spacePost });
         }
@@ -24,13 +25,11 @@ router.get("/new", middleware.isLoggedIn, function(req, res) {
 router.post("/", middleware.isLoggedIn, function(req, res) {
     spacePost.findById(req.params.id, function(err, spacePost) {
         if (err) {
-            console.log(err);
             res.redirect("/spaceblog");
         } else {
             Comment.create(req.body.comment, function(err, comment) {
                 if (err) {
                     req.flash("error", "Something went wrong");
-                    console.log(err);
                 } else {
                     //add username and id to comment
                     comment.author.id = req.user._id;
@@ -51,13 +50,20 @@ router.post("/", middleware.isLoggedIn, function(req, res) {
 
 // COMMENT EDIT ROUTE
 router.get("/:comment_id/edit", middleware.checkCommentOwnership, function(req, res) {
-    Comment.findById(req.params.comment_id, function(err, foundComment) {
-        if (err) {
-            res.redirect("back");
-        } else {
-            res.render("comments/edit", { spacePost_id: req.params.id, comment: foundComment });
+    spacePost.findById(req.params.id, function(err, foundSpacePost) {
+        if (err || !foundSpacePost) {
+            req.flash("error", "Post not found");
+            return res.redirect("back");
         }
+        Comment.findById(req.params.comment_id, function(err, foundComment) {
+            if (err) {
+                res.redirect("back");
+            } else {
+                res.render("comments/edit", { spacePost_id: req.params.id, comment: foundComment });
+            }
+        });
     });
+
 });
 
 // COMMENT UPDATE
