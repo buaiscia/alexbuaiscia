@@ -95,18 +95,14 @@ router.delete("/:id", middleware.checkSpacePostOwnership, function(req, res) {
         if (err) {
             res.redirect("/spaceBlog");
         } else {
+            req.flash("success", "Post deleted");
             res.redirect("/spaceBlog");
         }
     })
 })
 
-// //middleware
-// function isLoggedIn(req, res, next) {
-//     if (req.isAuthenticated()) {
-//         return next();
-//     }
-//     res.redirect("/login");
-// }
+
+
 
 
 module.exports = router;

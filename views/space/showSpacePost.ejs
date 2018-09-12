@@ -12,7 +12,7 @@
                     <p>
                         <em>Submitted By <%= spacePost.author.username %></em>
                     </p>
-                    <% if(currentUser && spacePost.author.id.equals(currentUser._id)){ %>
+                    <% if(currentUser && spacePost.author.id.equals(currentUser._id) || currentUser.username === "alex") { %>
                         <a class="btn btn-xs btn-warning" href="/spaceblog/<%= spacePost._id %>/edit">Edit</a>
                         <form id="delete-form" action="/spaceblog/<%= spacePost._id %>?_method=DELETE" method="POST">
                             <button class="btn btn-xs btn-danger">Delete</button>
