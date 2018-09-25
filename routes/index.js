@@ -39,7 +39,9 @@ router.get("/login", function(req, res) {
 //handling login logic
 router.post("/login", passport.authenticate("local", {
     successRedirect: "/spaceBlog",
-    failureRedirect: "/login"
+    successFlash: true,
+    failureRedirect: "/login",
+    failureFlash: true
 }), function(req, res) {});
 
 // logout route

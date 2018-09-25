@@ -1,6 +1,6 @@
 //REQUIREMENTS
 
-var express = require("express"),
+const express = require("express"),
     app = express(),
     bodyParser = require("body-parser"),
     mongoose = require("mongoose"),
@@ -8,9 +8,13 @@ var express = require("express"),
     passport = require("passport"),
     LocalStrategy = require("passport-local"),
     methodOverride = require("method-override"),
-    Campground = require("./models/spacePost"),
+    spacePost = require("./models/spacePost"),
     Comment = require("./models/spaceComment"),
-    User = require("./models/user");
+    User = require("./models/user"),
+    compression = require('compression'),
+    helmet = require('helmet');
+
+
 // seedDB = require("./seeds");
 
 
@@ -25,7 +29,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
-
+app.use(compression());
 
 app.use(flash());
 // seedDB();
@@ -53,6 +57,7 @@ const spaceCommentRoute = require('./routes/space/comments');
 
 
 // PASSPORT CONFIGURATION
+
 app.use(require("express-session")({
     secret: "Sahaja yoga is supporting this",
     resave: false,
@@ -86,7 +91,7 @@ app.use('/spaceBlog/:id/comments', spaceCommentRoute);
 
 
 app.get('*', function(req, res) {
-    res.status(404).send('what???');
+    res.status(404).send('what are you doing here???');
 });
 
 // SERVER

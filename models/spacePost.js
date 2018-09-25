@@ -1,6 +1,6 @@
-var mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
-var postSpaceSchema = new mongoose.Schema({
+const postSpaceSchema = new mongoose.Schema({
     name: String,
     image: String,
     description: String,
