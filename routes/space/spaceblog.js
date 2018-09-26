@@ -5,21 +5,39 @@ const express = require("express"),
     middleware = require("../../middleware");
 // seedDB = require("../../seeds");
 
+function paginate(req, res, next) {
+    var perPage = 2;
+    var page = req.params.page;
+    spacePost.find({})
+        .skip(perPage * page)
+        .limit(perPage)
+        .exec(function(err, allPosts) {
+            if (err) {
+                console.log(err);
+                return next(err.message);
+            }
+            spacePost.estimatedDocumentCount().exec(function(err, count) {
+                if (err) return next(err.message);
+                res.render("space/spaceblog", {
+                    spacePosts: allPosts,
+                    pages: count / perPage
+                });
+            });
+
+        });
+}
 
 // ROOT ROUTE
 
 //INDEX - show all space posts
-router.get("/", function(req, res) {
+router.get("/", function(req, res, next) {
     //get space posts from DB
-    spacePost.find({}, function(err, allPosts) {
-        if (err) {
-            console.log(err);
-        } else {
-            res.render("space/spaceblog", { spacePosts: allPosts });
-
-        }
-    });
+    paginate(req, res, next);
 });
+
+router.get("/page/:page", function(req, res, next) {
+    paginate(req, res, next);
+})
 
 // CREATE POST 
 
