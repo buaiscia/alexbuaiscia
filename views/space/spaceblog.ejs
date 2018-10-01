@@ -2,74 +2,81 @@
 
 
 
-<div class="container">
-     <div class="row">
-        <div class="col-md-8">
-            <h1 class="my-4">Page Heading
-                <small>Secondary Text</small>
-            </h1>
-            <% if(currentUser && currentUser.username === "alex"){ %>
-            <p>
-                <a class="btn btn-primary btn-large" href="/spaceblog/new">Add New Space Post</a>
-            </p>
-             <% }%> 
-                    <% spacePosts.forEach(function(post){ %>
-                    <div class="card mb-4">
-                            
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h1 class="my-4">Page Heading
+                    <small>Secondary Text</small>
+                </h1>
+                <% if(currentUser && currentUser.username === "alex"){ %>
+                    <p>
+                        <a class="btn btn-primary btn-large" href="/spaceblog/new">Add New Space Post</a>
+                    </p>
+                    <% }%>
+                        <% spacePosts.forEach(function(post){ %>
+                            <div class="card mb-4">
+
                                 <div class="card-img-top">
-                                <img src="<%= post.image %>" style="width:100%">
-                                <div class="card-body">
-                                    <div class="card-title">
-                                        <h4><%= post.name %></h4>
+                                    <img src="<%= post.image %>" style="width:100%">
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            <h4>
+                                                <%= post.name %>
+                                            </h4>
+                                        </div>
+                                        <p>
+                                            <a href="/spaceblog/<%= post._id %>" class="btn btn-primary">More Info &rarr;</a>
+                                        </p>
                                     </div>
-                                <p>
-                                    <a href="/spaceblog/<%= post._id %>" class="btn btn-primary">More Info &rarr;</a>
-                                </p>
+
                                 </div>
-                            
-                    </div>
-                    <div class="card-footer text-muted">
-                        Posted on January 1, 2017 by
-                        <a href="#">Start Bootstrap</a>
-                    </div>
-                    </div>
-                    <% }); %>
+                                <div class="card-footer text-muted">
+                                    Posted on
+                                    <%= post.createdOn %>
 
-                
-
-                <!-- Pagination -->
-                <div class="container text-center">
-                    <ul class="pagination">
-                        <li>
-                        <% for(var i = 0; i < pages; i++) { %>
-                            <% if(i===0) { %>
-                                <li>Pages: <a href="/spaceblog"><%= i %> </a></li>
-                            <% } else { %>
-                                <li><a href="/spaceblog/page/<%= i %>"> - <%= i %></a></li>
-                            <% } %>
-                        <% } %>
-                        </li>
-                    </ul>
-                     
-
-                </div>
+                                </div>
+                            </div>
+                            <% }); %>
 
 
-                </div>
 
-                <!-- Sidebar Widgets Column -->
-                <div class="col-md-4">
+                                <!-- Pagination -->
+                                <div class="container text-center">
+                                    <ul class="pagination">
+                                        <li>
+                                            <% for(var i = 0; i < pages; i++) { %>
+                                                <% if(i===0) { %>
+                                                    <li>Pages:
+                                                        <a href="/spaceblog">
+                                                            <%= i %>
+                                                        </a>
+                                                    </li>
+                                                    <% } else { %>
+                                                        <li><a href="/spaceblog/page/<%= i %>"> - <%= i %></a></li>
+                                                        <% } %>
+                                                            <% } %>
+                                        </li>
+                                    </ul>
+
+
+                                </div>
+
+
+            </div>
+
+            <!-- Sidebar Widgets Column -->
+            <div class="col-md-4">
 
                 <!-- Search Widget -->
                 <div class="card my-4">
                     <h5 class="card-header">Search</h5>
                     <div class="card-body">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for...">
-                        <span class="input-group-btn">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search for...">
+                            <span class="input-group-btn">
                         <button class="btn btn-secondary" type="button">Go!</button>
                         </span>
-                    </div>
+                        </div>
                     </div>
                 </div>
 
@@ -77,34 +84,34 @@
                 <div class="card my-4">
                     <h5 class="card-header">Categories</h5>
                     <div class="card-body">
-                    <div class="row">
-                        <div class="col-lg-6">
-                        <ul class="list-unstyled mb-0">
-                            <li>
-                            <a href="#">Web Design</a>
-                            </li>
-                            <li>
-                            <a href="#">HTML</a>
-                            </li>
-                            <li>
-                            <a href="#">Freebies</a>
-                            </li>
-                        </ul>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a href="#">Web Design</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">HTML</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Freebies</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6">
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a href="#">JavaScript</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">CSS</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Tutorials</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="col-lg-6">
-                        <ul class="list-unstyled mb-0">
-                            <li>
-                            <a href="#">JavaScript</a>
-                            </li>
-                            <li>
-                            <a href="#">CSS</a>
-                            </li>
-                            <li>
-                            <a href="#">Tutorials</a>
-                            </li>
-                        </ul>
-                        </div>
-                    </div>
                     </div>
                 </div>
 
@@ -112,13 +119,13 @@
                 <div class="card my-4">
                     <h5 class="card-header">Side Widget</h5>
                     <div class="card-body">
-                    You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+                        You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
                     </div>
                 </div>
+            </div>
         </div>
-     </div>
-</div>
+    </div>
 
 
 
-<% include ../partials/footer %>
+    <% include ../partials/footer %>

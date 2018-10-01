@@ -9,6 +9,7 @@ function paginate(req, res, next) {
     var perPage = 2;
     var page = req.params.page;
     spacePost.find({})
+        .sort({ date: -1 })
         .skip(perPage * page)
         .limit(perPage)
         .exec(function(err, allPosts) {
@@ -51,12 +52,14 @@ router.post("/", middleware.isLoggedIn, function(req, res) {
         id: req.user._id,
         username: req.user.username
     }
+    var createdOn = req.body.date;
     var newPost = {
         name: name,
         image: image,
         description: description,
         text: text,
-        author: author
+        author: author,
+        createdOn: createdOn
     }
     spacePost.create(newPost, function(err, newlyCreated) {
         if (err) {
