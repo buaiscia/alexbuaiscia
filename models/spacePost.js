@@ -12,7 +12,10 @@ const postSpaceSchema = new mongoose.Schema({
         },
         username: String
     },
-    createdOn: { type: Date, default: Date.now },
+    createdOn: {
+        type: Date,
+        default: Date.now
+    },
     comments: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Comment"

@@ -1,15 +1,17 @@
 const express = require("express"),
     router = express.Router(),
     bodyParser = require("body-parser"),
+    moment = require("moment"),
     spacePost = require("../../models/spacePost"),
     middleware = require("../../middleware");
 // seedDB = require("../../seeds");
+
 
 function paginate(req, res, next) {
     var perPage = 2;
     var page = req.params.page;
     spacePost.find({})
-        .sort({ date: -1 })
+        .sort({ createdOn: -1 })
         .skip(perPage * page)
         .limit(perPage)
         .exec(function(err, allPosts) {
@@ -52,7 +54,12 @@ router.post("/", middleware.isLoggedIn, function(req, res) {
         id: req.user._id,
         username: req.user.username
     }
-    var createdOn = req.body.date;
+
+
+    var postedTime = req.body.date;
+    let createdOn = moment(postedTime).toString();
+    console.log(createdOn);
+
     var newPost = {
         name: name,
         image: image,

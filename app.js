@@ -13,7 +13,7 @@ const express = require("express"),
     User = require("./models/user"),
     compression = require('compression'),
     helmet = require('helmet');
-
+app.locals.moment = require('moment');
 
 // seedDB = require("./seeds");
 
@@ -30,6 +30,7 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(compression());
+app.use(helmet());
 
 app.use(flash());
 // seedDB();

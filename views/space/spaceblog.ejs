@@ -32,8 +32,9 @@
                                 </div>
                                 <div class="card-footer text-muted">
                                     Posted on
-                                    <%= post.createdOn %>
-
+                                    <%= moment(post.createdOn).format('DD MM YYYY');  %>
+                                        by
+                                        <%= post.author.username %>
                                 </div>
                             </div>
                             <% }); %>
