@@ -8,6 +8,10 @@ var commentSpaceSchema = mongoose.Schema({
             ref: "User"
         },
         username: String
+    },
+    createdOn: {
+        type: Date,
+        default: Date.now
     }
 });
 

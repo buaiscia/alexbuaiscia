@@ -1,9 +1,10 @@
 <% include ../partials/headerSpace %>
 
 
-<div class="container">
     <div class="row">
-        <h1 style="text-align: center">Edit <%= spacePost.name %></h1>
+        <h1 style="text-align: center">Edit
+            <%= spacePost.name %>
+        </h1>
         <div style="width: 30%; margin: 25px auto;">
             <form action="/spaceblog/<%= spacePost._id %>?_method=PUT" method="POST">
                 <div class="form-group">
@@ -25,6 +26,5 @@
             <a href="/spaceBlog">Go Back</a>
         </div>
     </div>
-</div>
-<% include ../partials/footer %>
 
+    <% include ../partials/footer %>

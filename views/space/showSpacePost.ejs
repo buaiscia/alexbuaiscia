@@ -1,14 +1,18 @@
 <% include ../partials/headerSpace %>
-<div class="container">
     <div class="row">
-        
+
         <div class="col-md-12">
             <div class="thumbnail">
                 <img class="img-responsive" src="<%= spacePost.image %>">
                 <div class="caption-full">
-                    <h4 class="pull-right">$9.00/night</h4>
-                    <h4><a><%=spacePost.name%></a></h4>
-                    <p><%= spacePost.description %></p>
+                    <h4>
+                        <a>
+                            <%=spacePost.name%>
+                        </a>
+                    </h4>
+                    <p>
+                        <%= spacePost.description %>
+                    </p>
                     <p>
                         <em>Submitted By <%= spacePost.author.username %></em>
                     </p>
@@ -17,7 +21,7 @@
                         <form id="delete-form" action="/spaceblog/<%= spacePost._id %>?_method=DELETE" method="POST">
                             <button class="btn btn-xs btn-danger">Delete</button>
                         </form>
-                    <% }%>
+                        <% }%>
                 </div>
             </div>
             <div class="well">
@@ -28,24 +32,22 @@
                 <% spacePost.comments.forEach(function(comment){ %>
                     <div class="row">
                         <div class="col-md-12">
-                            <strong><%= comment.author.username %></strong>
-                            <span class="pull-right">10 days ago</span>
+                            <strong><%= comment.author.username %></strong> on
+                            <span class="pull-right"><%= moment(comment.createdOn).format('dddd DD/MM/YYYY');  %></span>
                             <p>
-                                <%= comment.text %> 
+                                <%= comment.text %>
                             </p>
-                        <% if(currentUser && (comment.author.id.equals(currentUser._id) || currentUser.username === "alex")) { %>
-                            <a class="btn btn-xs btn-warning" 
-                               href="/spaceblog/<%=spacePost._id %>/comments/<%=comment._id %>/edit">Edit</a>
-                            <form id="delete-form" action="/spaceblog/<%=spacePost._id %>/comments/<%=comment._id %>?_method=DELETE" method="POST">
-                                <input type="submit" class="btn btn-xs btn-danger" value="Delete">
-                            </form>
-                        <% } %>
+                            <% if(currentUser && (comment.author.id.equals(currentUser._id) || currentUser.username === "alex")) { %>
+                                <a class="btn btn-xs btn-warning" href="/spaceblog/<%=spacePost._id %>/comments/<%=comment._id %>/edit">Edit</a>
+                                <form id="delete-form" action="/spaceblog/<%=spacePost._id %>/comments/<%=comment._id %>?_method=DELETE" method="POST">
+                                    <input type="submit" class="btn btn-xs btn-danger" value="Delete">
+                                </form>
+                                <% } %>
                         </div>
                     </div>
-                <% }) %>
+                    <% }) %>
             </div>
         </div>
     </div>
-</div>
 
-<% include ../partials/footer %>
+    <% include ../partials/footer %>

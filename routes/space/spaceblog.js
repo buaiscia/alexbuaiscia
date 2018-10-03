@@ -23,7 +23,8 @@ function paginate(req, res, next) {
                 if (err) return next(err.message);
                 res.render("space/spaceblog", {
                     spacePosts: allPosts,
-                    pages: count / perPage
+                    pages: count / perPage,
+                    page: 'spaceblog'
                 });
             });
 
