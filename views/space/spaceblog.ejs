@@ -1,9 +1,8 @@
 <% include ../partials/headerSpace %>
 
     <div class="row">
-        <div class="col-md-8">
-            <h1 class="my-4">Page Heading
-                <small>Secondary Text</small>
+        <div class="col-md-10">
+            <h1 id="titleSpace" class="my-4">Space blog
             </h1>
             <% if(currentUser && currentUser.username === "alex"){ %>
                 <p>
@@ -11,10 +10,10 @@
                 </p>
                 <% }%>
                     <% spacePosts.forEach(function(post){ %>
-                        <div class="card mb-4">
+                        <div id="posts" class="card mb-4 rounded">
 
                             <div class="card-img-top">
-                                <img src="<%= post.image %>" style="width:100%">
+                                <img class="item" src="<%= post.image %>">
                                 <div class="card-body">
                                     <div class="card-title">
                                         <h4>
