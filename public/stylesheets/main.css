@@ -27,6 +27,14 @@
         overflow: hidden;
     }
     
+    #navStyle {
+        font-size: 1.2em;
+    }
+    
+    #navStyle a {
+        /* color: black; */
+    }
+    
     .divider {
         width: 5px;
         height: auto;
