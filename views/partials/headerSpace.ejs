@@ -11,7 +11,7 @@
 
     <title>Alex Buaiscia</title>
     <style>
-        @import url('https://fonts.googleapis.com/css?family=Tangerine|Libre+Baskerville');
+        @import url('https://fonts.googleapis.com/css?family=Tangerine|Libre+Baskerville|Old+Standard+TT|Monoton');
     </style>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="http://cdn.phpoll.com/css/animate.css" rel="stylesheet">
@@ -29,53 +29,76 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-        <div class="container-fluid">
 
-            <a class="navbar-brand" href="#">Alex Buaiscia</a>
-            <a class="navbar-brand" href="/">Home</a>
+
+    <div class="container-fluid">
+
+        <nav class="navbar navbar-expand-lg navbar-light">
+
+
+            <a style="padding-left: 10%" class="navbar-brand" href="#">Alex Buaiscia</a>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                               <span class="navbar-toggler-icon"></span>
                             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
 
+
+                <ul class="navbar-nav navbar-left">
+                    <a class="nav-item nav-link active" href="/">Home</a>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Dropdown
+                        <a class="nav-link dropdown-toggle disabled" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Scrittura
                                   </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Pubblicazioni</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="#">Blog di scrittura</a>
                         </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/spaceblog">Spaceblog</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle disabled" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Dev life
+                                  </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Projects</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Skills</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Curriculum</a>
+                        </div>
                     </li>
                 </ul>
 
 
+            </div>
+            <!-- <div id="signButtons" class="row"> -->
 
+            <div id="signButtons" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <% if(!currentUser){ %>
-                        <li><a href="/login">Login </a></li>
-                        <li><a href="/register">Sign Up </a></li>
+                        <li><a class="btn btn-outline-info" href="/login">Login  &nbsp; </a></li>
+                        <div class="divider"></div>
+                        <li><a class="btn btn-outline-info" href="/register">Sign Up  &nbsp; </a></li>
                         <% } else { %>
-                            <li><a href="#">Signed In As <%= currentUser.username %> </a></li>
-                            <li><a href="/logout">Logout </a></li>
+                            <li style="padding-top: 7px;"><a href="#">Signed In as <%= currentUser.username %>  &nbsp; </a></li>
+                            <div class="divider"></div>
+                            <div class="divider"></div>
+                            <div class="divider"></div>
+                            <li><a class="btn btn-outline-info" href="/logout">Logout  &nbsp; </a></li>
                             <% } %>
                 </ul>
             </div>
 
+            <!-- </div> -->
 
 
-    </nav>
+
+        </nav>
     </div>
 
 
@@ -94,4 +117,4 @@
                     <% } %>
     </div>
 
-    <div class="container">
+    <div style="padding-left: 10%; padding-right:10%" class="container-fluid">

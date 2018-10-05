@@ -1,94 +1,116 @@
 <% include ../partials/headerSpace %>
 
     <div class="row">
-        <div class="col-md-10">
-            <h1 id="titleSpace" class="my-4">Space blog
-            </h1>
+        <h1 id="titleSpace" class="my-4">Space blog
+        </h1>
+        <div class="col-md-10 col-sm-10 col-lg-10">
+
             <% if(currentUser && currentUser.username === "alex"){ %>
                 <p>
                     <a class="btn btn-primary btn-large" href="/spaceblog/new">Add New Space Post</a>
                 </p>
                 <% }%>
-                    <% spacePosts.forEach(function(post){ %>
-                        <div id="posts" class="card mb-4 rounded">
+                    <div class="card-columns">
 
-                            <div class="card-img-top">
-                                <img class="item" src="<%= post.image %>">
-                                <div class="card-body">
-                                    <div class="card-title">
-                                        <h4>
+                        <% spacePosts.forEach(function(post){ %>
+                            <div class="container">
+                                <div id="posts" class="card rounded shadow">
+
+                                    <!-- <div class="card-img-top"> -->
+                                    <img class="item card-img" src="<%= post.image %>">
+                                    <div class="card-block">
+                                        <h4 class="card-title">
                                             <%= post.name %>
                                         </h4>
+                                        <p class="card-text">
+                                            <%= post.description %>
+                                        </p>
+                                        <p style="margin: 20px 1%">
+                                            <a href="/spaceblog/<%= post._id %>" id="readMore" class="btn btn-primary">Read more &rarr;</a>
+                                        </p>
+                                        <!-- </div> -->
+
                                     </div>
-                                    <p>
-                                        <a href="/spaceblog/<%= post._id %>" class="btn btn-primary">Read more &rarr;</a>
-                                    </p>
+                                    <div class="card-footer text-muted">
+                                        Posted on
+                                        <%= moment(post.createdOn).format('dddd DD/MM/YYYY hh24');  %>
+                                            by
+                                            <%= post.author.username %>
+                                    </div>
                                 </div>
-
-                            </div>
-                            <div class="card-footer text-muted">
-                                Posted on
-                                <%= moment(post.createdOn).format('dddd DD/MM/YYYY');  %>
-                                    by
-                                    <%= post.author.username %>
-                            </div>
-                        </div>
-                        <% }); %>
-
-
-
-                            <!-- Pagination -->
-                            <div class="container text-center">
-                                <ul class="pagination">
-                                    <li>
-                                        <% for(var i = 0; i < pages; i++) { %>
-                                            <% if(i===0) { %>
-                                                <li>Pages:
-                                                    <a href="/spaceblog">
-                                                        <%= i %>
-                                                    </a>
-                                                </li>
-                                                <% } else { %>
-                                                    <li><a href="/spaceblog/page/<%= i %>"> - <%= i %></a></li>
-                                                    <% } %>
-                                                        <% } %>
-                                    </li>
-                                </ul>
-
-
+                                <hr>
                             </div>
 
 
+
+
+                            <% }); %>
+
+                    </div>
         </div>
 
         <!-- Sidebar Widgets Column -->
-        <div class="col-md-4">
+        <div class="col-md-2 col-sm-2 col-lg-2">
 
             <!-- Search Widget -->
-            <!-- <div class="card my-4">
+            <div class="card my-4">
                 <h5 class="card-header">Search</h5>
                 <div class="card-body">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search for...">
                         <span class="input-group-btn">
-                        <button class="btn btn-secondary" type="button">Go!</button>
-                        </span>
+                                        <button class="btn btn-secondary" type="button">Go!</button>
+                                        </span>
                     </div>
                 </div>
-            </div> -->
+            </div>
 
             <!-- Categories Widget -->
 
 
             <!-- Side Widget -->
-            <!-- <div class="card my-4">
+            <div class="card my-4">
                 <h5 class="card-header">Side Widget</h5>
                 <div class="card-body">
                     You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
                 </div>
-            </div> -->
+            </div>
         </div>
     </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Pagination -->
+            <div class="container text-center">
+                <ul class="pagination">
+                    <li>
+                        <% for(var i = 0; i < pages; i++) { %>
+                            <% if(i===0) { %>
+                                <li>Pages:
+                                    <a href="/spaceblog">
+                                        <%= i %>
+                                    </a>
+                                </li>
+                                <% } else { %>
+                                    <li><a href="/spaceblog/page/<%= i %>"> - <%= i %></a></li>
+                                    <% } %>
+                                        <% } %>
+                    </li>
+                </ul>
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    </div>
+
+
+
 
 
 

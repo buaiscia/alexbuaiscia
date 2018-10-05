@@ -8,7 +8,7 @@ const express = require("express"),
 
 
 function paginate(req, res, next) {
-    var perPage = 2;
+    var perPage = 6;
     var page = req.params.page;
     spacePost.find({})
         .sort({ createdOn: -1 })
