@@ -54,7 +54,7 @@ const spaceCommentRoute = require('./routes/space/comments');
 
 // DEV ROUTE
 
-// const landingDev = require('./routes/dev/landingDev');
+const devlifeRoute = require('./routes/dev/devlife');
 
 
 // PASSPORT CONFIGURATION
@@ -85,7 +85,7 @@ app.use('/', indexRoute);
 // app.use('/scritturablog', blogWritingRoute);
 app.use('/spaceblog', spaceBlogRoute);
 app.use('/spaceBlog/:id/comments', spaceCommentRoute);
-// app.use('/dev', landingDev);
+app.use('/devlife', devlifeRoute);
 
 
 

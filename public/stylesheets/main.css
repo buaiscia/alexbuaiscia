@@ -31,8 +31,16 @@
         font-size: 1.2em;
     }
     
-    #navStyle a {
-        /* color: black; */
+    .navbar-nav li {
+        border-right: 1px solid rgba(0, 0, 0, 0.322);
+    }
+    
+    .navbar-nav li:last-child {
+        border: none;
+    }
+    
+    .navbar-right {
+        border: none;
     }
     
     .divider {
@@ -42,6 +50,8 @@
     }
     
     .navbar-light {
+        font-family: 'Old Standard TT', serif;
+        font-size: 1.2em;
         background: #ADA996;
         /* fallback for old browsers */
         background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
