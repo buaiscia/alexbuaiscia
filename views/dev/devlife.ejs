@@ -1,7 +1,82 @@
 <% include ../partials/header %>
+    <script>
+        $('.carousel').carousel({
+            interval: 10000
+        })
+    </script>
 
-    <h1>
-        DEV LIFE!
-    </h1>
+    <div>
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="devMenu">
+                    <li><a href="#about"> About me</a></li>
+                    <li><a href="#about"> Skills</a></li>
+                    <li><a href="#about"> Projects</a></li>
+                    <li><a href="#about"> Contacts</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>
+                    <div id="carouselExampleIndicators" class="carousel slide slider" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-100" src="http://wowslider.com/sliders/demo-77/data1/images/road220058.jpg" alt="First slide">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <a href="#" target="_blank"><button type="button" class="btn btn-default btnSlide">Are those the skills you need?</button></a>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="http://cssslider.com/sliders/demo-17/data1/images/picjumbo.com_hanv9909.jpg" alt="Second slide">
+                                <div class="carousel-caption d-none d-md-block btnSlide">
+                                    <a href="#" target="_blank"><button type="button" class="btn btn-default btnSlide">Sharing some knowledge</button></a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </h2>
+            </div>
+        </div>
+        <div id="about" class="row">
+            <div class="col-md-12">
+                <p class="sectionTitle">
+                    About me
+                </p>
+            </div>
+        </div>
+        <div id="skills" class="row">
+            <div class="col-md-12">
+                <p class="sectionTitle">Skills</p>
+            </div>
+        </div>
+        <div id="projects" class="row">
+            <div class="col-md-12">
+                <p class="sectionTitle">Portfolio</p>
+            </div>
+        </div>
+        <div id="contact" class="row">
+            <div class="col-md-12">
+                <p class="sectionTitle">Contact</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
 
     <% include ../partials/footer %>

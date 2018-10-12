@@ -1,39 +1,41 @@
 <% include ../partials/header %>
-
-    <div class="row">
-        <h1 style="text-align: center; padding: 20px;">Create a New Space Post</h1>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div style="width: 80%; margin: 25px auto;">
-                <form action="/spaceBlog" method="POST">
-                    <div class="form-group">
-                        <input class="form-control" type="text" name="name" placeholder="name">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="text" name="image" placeholder="image url">
-                    </div>
-
-                    <div class="form-group">
-                        <textarea name="text" id="mytextarea" placeholder="Your text here"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="text" name="description" placeholder="description">
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-lg btn-primary btn-block">Submit!</button>
-                    </div>
-                </form>
-
-                <!-- Include stylesheet -->
-
-
-
-                <a href="/spaceblog">Go Back</a>
-            </div>
+    <div class="spaceSection">
+        <div class="row">
+            <h1 style="text-align: center; padding: 20px;">Create a New Space Post</h1>
         </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div style="width: 80%; margin: 25px auto;">
+                    <form action="/spaceBlog" method="POST">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="name" placeholder="name">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="image" placeholder="image url">
+                        </div>
 
+                        <div class="form-group">
+                            <textarea name="text" id="mytextarea" placeholder="Your text here"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="description" placeholder="description">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+                        </div>
+                    </form>
+
+                    <!-- Include stylesheet -->
+
+
+
+                    <a href="/spaceblog">Go Back</a>
+                </div>
+            </div>
+
+        </div>
     </div>
+
 
 
 

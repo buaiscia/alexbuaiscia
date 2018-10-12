@@ -1,10 +1,7 @@
 const express = require("express"),
     router = express.Router(),
     bodyParser = require("body-parser"),
-    // moment = require("moment"),
-    // spacePost = require("../../models/spacePost"),
     middleware = require("../../middleware");
-// seedDB = require("../../seeds");
 
 
 // function paginate(req, res, next) {
@@ -33,11 +30,14 @@ const express = require("express"),
 
 // ROOT ROUTE
 
-//INDEX - show all space posts
+//INDEX - 
 router.get("/", function(req, res, next) {
-    //get space posts from DB
+
     res.render("dev/devlife");
 });
+
+
+
 
 
 

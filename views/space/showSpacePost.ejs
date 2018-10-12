@@ -6,55 +6,58 @@
         });
     </script>
 
-    <div class="row">
-        <div style="margin-top: 30px;" class="col-md-12 ">
-            <h4>
-                <a class="titlePost">
-                    <%=spacePost.name%>
-                </a>
-            </h4>
-            <p>
-                <em class="float-right" id="submittedby">Submitted by <%= spacePost.author.username %> on <%= moment(spacePost.createdOn).format('dddd DD/MM/YYYY');  %></em>
-            </p>
-            <img id="postImage" class="img-responsive float-left" src="<%= spacePost.image %>">
-            <div class="postText">
-                <p>
-                    <%- spacePost.text %>
-                </p>
-                <% if(currentUser && (spacePost.author.id.equals(currentUser._id) || currentUser.username === "alex")) { %>
-                    <div style="margin: 1%;">
-                        <a class="btn btn-xs btn-warning" href="/spaceblog/<%= spacePost._id %>/edit">Edit</a>
-                        <form style="display: inline" id="delete-form" action="/spaceblog/<%= spacePost._id %>?_method=DELETE" method="POST">
-                            <button class="btn btn-xs btn-danger">Delete</button>
-                        </form>
-                    </div>
-
-                    <% }%>
-            </div>
-        </div>
+    <div class="spaceSection">
         <div class="row">
-            <div class="imagePost col-md-12 ">
-                <a class="btn btn-success" href="/spaceblog/<%= spacePost._id %>/comments/new">Add New Comment</a>
-                <hr>
-                <% spacePost.comments.forEach(function(comment){ %>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <strong><%= comment.author.username %></strong> on
-                            <span class="pull-right"><%= moment(comment.createdOn).format('dddd DD/MM/YYYY');  %></span>
-                            <p>
-                                <%= comment.text %>
-                            </p>
-                            <% if(currentUser && (comment.author.id.equals(currentUser._id) || currentUser.username === "alex")) { %>
-                                <a class="btn btn-xs btn-warning" href="/spaceblog/<%=spacePost._id %>/comments/<%=comment._id %>/edit">Edit</a>
-                                <form style="display: inline" id="delete-form" action="/spaceblog/<%=spacePost._id %>/comments/<%=comment._id %>?_method=DELETE" method="POST">
-                                    <input type="submit" class="btn btn-xs btn-danger" value="Delete">
-                                </form>
-                                <% } %>
+            <div style="margin-top: 30px;" class="col-md-12 ">
+                <h4>
+                    <a class="titlePost">
+                        <%=spacePost.name%>
+                    </a>
+                </h4>
+                <p>
+                    <em class="float-right" id="submittedby">Submitted by <%= spacePost.author.username %> on <%= moment(spacePost.createdOn).format('dddd DD/MM/YYYY');  %></em>
+                </p>
+                <img id="postImage" class="img-responsive float-left" src="<%= spacePost.image %>">
+                <div class="postText">
+                    <p>
+                        <%- spacePost.text %>
+                    </p>
+                    <% if(currentUser && (spacePost.author.id.equals(currentUser._id) || currentUser.username === "alex")) { %>
+                        <div style="margin: 1%;">
+                            <a class="btn btn-xs btn-warning" href="/spaceblog/<%= spacePost._id %>/edit">Edit</a>
+                            <form style="display: inline" id="delete-form" action="/spaceblog/<%= spacePost._id %>?_method=DELETE" method="POST">
+                                <button class="btn btn-xs btn-danger">Delete</button>
+                            </form>
                         </div>
-                    </div>
-                    <% }) %>
+
+                        <% }%>
+                </div>
+            </div>
+            <div class="row">
+                <div class="imagePost col-md-12 ">
+                    <a class="btn btn-success" href="/spaceblog/<%= spacePost._id %>/comments/new">Add New Comment</a>
+                    <hr>
+                    <% spacePost.comments.forEach(function(comment){ %>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <strong><%= comment.author.username %></strong> on
+                                <span class="pull-right"><%= moment(comment.createdOn).format('dddd DD/MM/YYYY');  %></span>
+                                <p>
+                                    <%= comment.text %>
+                                </p>
+                                <% if(currentUser && (comment.author.id.equals(currentUser._id) || currentUser.username === "alex")) { %>
+                                    <a class="btn btn-xs btn-warning" href="/spaceblog/<%=spacePost._id %>/comments/<%=comment._id %>/edit">Edit</a>
+                                    <form style="display: inline" id="delete-form" action="/spaceblog/<%=spacePost._id %>/comments/<%=comment._id %>?_method=DELETE" method="POST">
+                                        <input type="submit" class="btn btn-xs btn-danger" value="Delete">
+                                    </form>
+                                    <% } %>
+                            </div>
+                        </div>
+                        <% }) %>
+                </div>
             </div>
         </div>
     </div>
+
 
     <% include ../partials/footer %>
