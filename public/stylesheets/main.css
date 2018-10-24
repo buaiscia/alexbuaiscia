@@ -262,8 +262,9 @@ a:active {
 } */
 
 .sectionTitle {
-    font-size: 36px;
+    font-size: 48px;
     text-align: center;
+    margin-top: 30px;
 }
 
 .spaceSection {
@@ -331,4 +332,9 @@ a:active {
     font-family: 'Dancing Script', cursive;
     /* font-weight: 600; */
     font-size: 6rem;
+}
+
+#projects img {
+    max-width: 600px;
+    max-height: 300px;
 }
