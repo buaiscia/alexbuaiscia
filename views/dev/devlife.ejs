@@ -1,9 +1,5 @@
 <% include ../partials/header %>
-    <script>
-        $('.carousel').carousel({
-            interval: 10000
-        })
-    </script>
+
 
     <div>
         <div class="row">
@@ -28,13 +24,13 @@
                             <div class="carousel-item active">
                                 <img class="d-block w-100" src="http://wowslider.com/sliders/demo-77/data1/images/road220058.jpg" alt="First slide">
                                 <div class="carousel-caption d-none d-md-block">
-                                    <a href="#" target="_blank"><button type="button" class="btn btn-default btnSlide">Are those the skills you need?</button></a>
+                                    <a href="#skills"><button type="button" class="btn btn-default btnSlide">Are those the skills you need?</button></a>
                                 </div>
                             </div>
                             <div class="carousel-item">
                                 <img class="d-block w-100" src="http://cssslider.com/sliders/demo-17/data1/images/picjumbo.com_hanv9909.jpg" alt="Second slide">
                                 <div class="carousel-caption d-none d-md-block btnSlide">
-                                    <a href="#" target="_blank"><button type="button" class="btn btn-default btnSlide">Sharing some knowledge</button></a>
+                                    <a href="/devblog"><button type="button" class="btn btn-default btnSlide">Sharing some knowledge</button></a>
                                 </div>
                             </div>
 
@@ -58,18 +54,19 @@
                 </p>
                 <p style="text-align: center; font-size: 24px;">
                     I'm an IT Application Specialist based in Brno, Czech Republic, who is building full-stack websites and applications.
-                    I really, really love to learn and to build new projects. </p>
+                    I love to learn technologies and to build new projects. </p>
             </div>
         </div>
         <div id="skills" class="row">
             <div class="col-md-12">
                 <p class="sectionTitle">Skills</p>
-                <section class="d-flex flex-row justify-content-around"  style="margin: 2% 5%; font-size: 6em;">
-                    <i class="fab fa-html5"></i>
-                    <i class="fab fa-css3-alt"></i>
+                <section class="d-flex flex-row justify-content-around"  style="margin: 2% 5%; font-size: 6em; ">
+                    <img src="./img/if_html5_294678.svg" alt="HTML5">
+                    <img src="./img/if_css3_294692.svg" alt="CSS3">
                     <i class="fab fa-js"></i>
-                    <i class="fab fa-node"></i>
+                    <img src="./img/if_nodejs-new-pantone-black_1012818.svg" alt="NodeJS">
                     <i class="fab fa-npm"></i>
+                    <img src="./img/if_mongodb_1012822.svg" alt="MongoDB">
                     <i class="fas fa-database"></i>
                     <i class="fab fa-linux"></i>
                     <i class="fab fa-php"></i>
@@ -81,19 +78,35 @@
             <div class="col-md-12">
                 <p class="sectionTitle">Portfolio</p>
                 <section class="d-flex flex-row justify-content-around">
-                    <img src="./img/alexbuaiscia.png" alt="main website of mine">
+                    <img src="./img/alexbuaiscia.jpg" alt="main website of mine">
                 </section>
             </div>
         </div>
         <div id="contact" class="row">
             <div class="col-md-12">
-                <p class="sectionTitle">Contact</p>
+                <p class="sectionTitle">Contacts</p>
+                <section class="d-flex flex-row">
+                    <div style="margin: 5%;">
+                        <a class="twitter-timeline" data-width="600" data-height="400" data-theme="dark" href="https://twitter.com/AlexBuaiscia?ref_src=twsrc%5Etfw">Tweets by AlexBuaiscia</a> 
+                    </div>
+                    <div style="margin: 5%; font-size: 26px;  ">
+                        <p> Get in touch:
+                        </p>
+                        <p><i class="fa fa-home"></i> Brno, Czech Republic </p>
+                        <p><i class="fa fa-envelope"></i><a style="text-decorations:none; color:inherit;" href="mailto: alex.buaiscia@gmail.com"> alex.buaiscia@gmail.com</a> </p>
+                        <p><i class="fab fa-linkedin-in"></i><a style="text-decorations:none; color:inherit;" href="https://www.linkedin.com/in/alex-buaiscia/"> Write me a message on Linkedin</a></p>
+                    </div>
+                </section>
+
+               
+                
             </div>
         </div>
     </div>
-
-
-
-
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8">
+    $('.carousel').carousel({
+            interval: 10000
+        })
+    </script>
 
     <% include ../partials/footer %>

@@ -338,3 +338,30 @@ a:active {
     max-width: 600px;
     max-height: 300px;
 }
+
+#skills img {
+    max-height: 103px;
+}
+
+
+/* #contact a {
+    -webkit-transition: font-weight 0.2s;
+    transition: font-weight 0.2s;
+} */
+
+#contact a:hover {
+    font-weight: 600;
+}
+
+.footer .fab {
+    color: white;
+    margin: 5px 10px;
+    font-size: 1.5em;
+    transition: color 0.5s;
+}
+
+.footer .fab:hover {
+    position: relative;
+    color: red;
+    cursor: pointer;
+}
