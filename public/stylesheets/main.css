@@ -63,6 +63,19 @@ h2 {
     display: inline-block;
 }
 
+.btn-outline-info {
+    border: 2px solid;
+    font-weight: 600;
+}
+
+.signButtons {
+    /* padding-right: -10%; */
+    position: absolute;
+    padding-top: 0.5rem;
+    right: 15px;
+    font-weight: 800;
+}
+
 .navbar-light {
     font-size: 1.2em;
     background: #ADA996;
