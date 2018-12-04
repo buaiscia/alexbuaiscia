@@ -34,6 +34,10 @@ footer {
 
 h2 {
     text-align: center;
+    padding-top: 80px;
+    margin-top: -80px;
+    -webkit-background-clip: content-box;
+    background-clip: content-box;
 }
 
 #navStyle {
@@ -42,7 +46,7 @@ h2 {
     /* overflow: hidden; */
     top: 0;
     width: 100%;
-    z-index: 2;
+    z-index: 2000;
 }
 
 .navbar-nav li {
@@ -392,4 +396,8 @@ a:active {
     position: relative;
     color: red;
     cursor: pointer;
+}
+
+.dropdown:hover>.dropdown-menu {
+    display: block;
 }

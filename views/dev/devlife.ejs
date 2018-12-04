@@ -1,5 +1,9 @@
 <% include ../partials/header %>
 
+
+    
+    
+
     <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script> 
     <script>
         tinymce.init({
@@ -8,21 +12,21 @@
         });
     </script>
 
-
+    
     <div>
         <div class="row">
             <div class="col-md-12">
                 <ul class="devMenu">
-                    <li><a class="anchor" href="#about"> About me</a></li>
-                    <li><a class="anchor" href="#skills"> Skills</a></li>
-                    <li><a class="anchor" href="#projects"> Projects</a></li>
-                    <li><a class="anchor" href="#contact"> Contacts</a></li>
+                    <li><a href="#about"> About me</a></li>
+                    <li><a href="#skills"> Skills</a></li>
+                    <li><a href="#projects"> Projects</a></li>
+                    <li><a href="#contact"> Contacts</a></li>
                 </ul>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
-                <h2>
+                
                     <div id="carouselExampleIndicators" class="carousel slide slider" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -52,23 +56,23 @@
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
-                </h2>
+                
             </div>
         </div>
-        <div id="about" class="row">
+        <div class="row">
             <div class="col-md-12">
-                <p class="sectionTitle">
+                <h2 id="about" class="sectionTitle">
                     About me
-                </p>
-                <p style="text-align: center; font-size: 24px;">
+                </h2>
+                <p style="text-align: center; font-size: 24px; margin: 2% 0;">
                     I'm an IT Application Specialist based in Brno, Czech Republic, who is building full-stack websites and applications.
                     I love to learn technologies and to build new projects. </p>
             </div>
         </div>
-        <div id="skills" class="row">
+        <div id="skills"  class="row">
             <div class="col-md-12">
-                <p class="sectionTitle">Skills</p>
-                <section class="d-flex flex-row justify-content-around"  style="margin: 2% 5%; font-size: 6em; ">
+                <h2 class="sectionTitle">Skills</h2>
+                <section class="d-flex flex-row justify-content-around"  style="margin: 1% 5%; font-size: 6em; ">
                     <img src="./img/if_html5_294678.svg" alt="HTML5">
                     <img src="./img/if_css3_294692.svg" alt="CSS3">
                     <i class="fab fa-js"></i>
@@ -84,20 +88,20 @@
         </div>
         <div id="projects" class="row">
             <div class="col-md-12">
-                <p class="sectionTitle">Portfolio</p>
-                <section class="d-flex flex-row justify-content-around">
+                <h2 class="sectionTitle">Portfolio</h2>
+                <section style="margin: 2% 0;" class="d-flex flex-row justify-content-around">
                     <img src="./img/alexbuaiscia.jpg" alt="main website of mine">
                 </section>
             </div>
         </div>
         <div id="contact" class="row">
             <div class="col-md-12">
-                <p class="sectionTitle">Contacts</p>
+                <h2 class="sectionTitle">Contacts</h2>
                 <section class="d-flex flex-row">
-                    <div style="margin: 5%;">
+                    <div style="margin: 1% 5%;">
                         <a class="twitter-timeline" data-width="600" data-height="400" data-theme="dark" href="https://twitter.com/AlexBuaiscia?ref_src=twsrc%5Etfw">Tweets by AlexBuaiscia</a> 
                     </div>
-                    <div style="margin: 5%; font-size: 26px;  ">
+                    <div style="margin: 1% 5%; font-size: 26px;  ">
                         <p> Get in touch:
                         </p>
                         <p><i class="fa fa-home"></i> Brno, Czech Republic </p>
@@ -116,5 +120,9 @@
             interval: 10000
         })
     </script>
+
+
+
+
 
     <% include ../partials/footer %>
