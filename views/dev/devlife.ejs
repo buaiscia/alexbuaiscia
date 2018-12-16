@@ -42,7 +42,8 @@
                             <div class="carousel-item">
                                 <img style="max-height: 714px" class="d-block w-100" src="./img/desk.jpg" alt="Second slide">
                                 <div class="carousel-caption d-none d-md-block btnSlide">
-                                    <a href="#"><button type="button" class="btn btn-default btnSlide">Sharing some knowledge <br> Under Construction</button></a>
+                                    <a href="#"><button type="button" class="btn btn-default btnSlide">Sharing some knowledge 
+                                    <br> <span style="font-size: 0.5em">(Under Construction)</span></button></a>
                                 </div>
                             </div>
 
@@ -89,8 +90,24 @@
         <div id="projects" class="row">
             <div class="col-md-12">
                 <h2 class="sectionTitle">Portfolio</h2>
-                <section style="margin: 2% 0;" class="d-flex flex-row justify-content-around">
-                    <img src="./img/alexbuaiscia.jpg" alt="main website of mine">
+                <section id="projects" style="margin: 2% 0;" class="d-flex flex-row justify-content-around">
+                    <div style="margin: auto">
+                        <img src="./img/alexbuaiscia.jpg" alt="main website of mine">
+                        <br>
+                        <p id="caption">Main website. 
+                        <br> Functions: login and sign-up; GUI to write and post on-line.
+                        <br> Technologies used: HTML5/CSS3, NodeJS, EJS, JS, MongoDB </p>
+                    </div>
+                    <div style="margin: auto; text-align: center">
+                        <img src="./img/deployment_tool.jpg" alt="developed deployment tool">
+                        <br>
+                        <p id="caption">Work related deployment tool. Functions: upload files on an automation server;
+                        <br>Deploy and sync buttons are loading the wanted file on the application server 
+                        <br>and running shell scripts to deploy and sync the servers with the given parameters. 
+                        <br>Technologies used: HTML5/CSS3, NodeJS, EJS, JS, Shell/Bash
+                        </p>
+                    </div>
+                    
                 </section>
             </div>
         </div>
@@ -117,7 +134,7 @@
     </div>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8">
     $('.carousel').carousel({
-            interval: 10000
+            interval: 1000
         })
     </script>
 
