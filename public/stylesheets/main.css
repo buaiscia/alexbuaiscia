@@ -87,7 +87,18 @@ h2 {
 
 .container-fluid {
     width: 100%;
-    padding: 0;
+    padding-top: 0;
+}
+
+.alert {
+    z-index: 2000;
+    position: absolute;
+}
+
+#alerts {
+    margin-left: 80%;
+    margin-top: 100px;
+    min-width: 200px;
 }
 
 .containerNav {
@@ -132,6 +143,7 @@ img {
 }
 
 #titleSpace {
+    padding-top: 10px;
     font-family: 'Monoton', cursive;
     font-size: 96px;
     text-shadow: 4px 4px 4px #aaa;
@@ -247,7 +259,7 @@ hr {
 }
 
 .devMenu {
-    padding: 60px 15px 0 0;
+    padding: 0px 15px 0 0;
     text-align: right;
     font-size: 36px;
 }
@@ -287,7 +299,7 @@ a:active {
 .moon {
     position: relative;
     margin: 4%;
-    top: 0;
+    top: 5px;
     right: 0;
     bottom: 0;
     left: 0;

@@ -22,7 +22,9 @@ app.locals.moment = require('moment');
 
 // SETTING OTHER STUFF
 
-mongoose.connect("mongodb://localhost:27017/alexDB", { useNewUrlParser: true });
+// mongoose.connect("mongodb://localhost:27017/alexDB", { useNewUrlParser: true });
+mongoose.connect("mongodb://alex:Buaiscia85@ds125372.mlab.com:25372/buaiscia", { useNewUrlParser: true });
+
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -48,7 +50,7 @@ const indexRoute = require("./routes/index");
 
 // SPACE ROUTE
 
-const spaceBlogRoute = require('./routes/space/spaceblog');
+const spaceBlogRoute = require('./routes/space/spaceBlog');
 const spaceCommentRoute = require('./routes/space/comments');
 
 
@@ -99,10 +101,8 @@ app.get('*', function(req, res) {
 
 // SERVER
 
-// app.listen(4000, function() {
-//     console.log("server started on port 4000");
-// });
-
-app.listen(process.env.PORT, process.env.IP, function(){
-   console.log("The server has started!");
+app.listen(4000, function() {
+    console.log("server started on port 4000");
 });
+
+// app.listen(process.env.PORT, process.event.IP);
