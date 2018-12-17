@@ -99,6 +99,8 @@ app.get('*', function(req, res) {
 
 // SERVER
 
-app.listen(4000, function() {
-    console.log("server started on port 4000");
-});
+// app.listen(4000, function() {
+//     console.log("server started on port 4000");
+// });
+
+app.listen(process.env.PORT, process.event.IP);
