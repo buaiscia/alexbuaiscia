@@ -48,7 +48,7 @@ const indexRoute = require("./routes/index");
 
 // SPACE ROUTE
 
-const spaceBlogRoute = require('./routes/space/spaceBlog');
+const spaceBlogRoute = require('./routes/space/spaceblog');
 const spaceCommentRoute = require('./routes/space/comments');
 
 
