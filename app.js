@@ -25,7 +25,7 @@ app.locals.moment = require('moment');
 console.log(process.env.DATABASEURL);
 // mongoose.connect("mongodb://localhost:27017/alexDB", { useNewUrlParser: true });
 // mongoose.connect("mongodb://alex:Buaiscia85@ds125372.mlab.com:25372/buaiscia", { useNewUrlParser: true });
-mongoose.connect("process.env.DATABASEURL", { useNewUrlParser: true });
+mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
