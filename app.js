@@ -22,9 +22,9 @@ app.locals.moment = require('moment');
 
 // SETTING OTHER STUFF
 
-// mongoose.connect("mongodb://localhost:27017/alexDB", { useNewUrlParser: true });
-mongoose.connect("mongodb://alex:Buaiscia85@ds125372.mlab.com:25372/buaiscia", { useNewUrlParser: true });
-
+console.log(process.env.DATABASEURL)
+mongoose.connect("mongodb://localhost:27017/alexDB", { useNewUrlParser: true });
+// mongoose.connect("mongodb://alex:Buaiscia85@ds125372.mlab.com:25372/buaiscia", { useNewUrlParser: true });
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -101,7 +101,8 @@ app.get('*', function(req, res) {
 
 // SERVER
 
-app.listen(process.env.PORT || 5000);
+app.listen(process.env.PORT || 5000, function() {
+    console.log("server started on port 5000");
+});
 
-
-
+// app.listen(process.env.PORT, process.event.IP);
