@@ -82,7 +82,7 @@
                             <div class="divider"></div>
                             <li><a class="btn btn-outline-info" href="/register">SIGN UP  &nbsp; </a></li>
                             <% } else { %>
-                                <li style="padding-top: 7px;"><a href="#">Signed In as <%= currentUser.username %>  &nbsp; </a></li>
+                                <li style="padding-top: 5px;"><a href="#">Signed In as <%= currentUser.username %>  &nbsp; </a></li>
                                 <div class="divider"></div>
                                 <div class="divider"></div>
                                 <div class="divider"></div>
@@ -91,7 +91,6 @@
                     </ul>
                 </div>
 
-                <!-- </div> -->
 
 
 
@@ -100,7 +99,7 @@
 
 
 
-        <div class="container-fluid">
+        <div id="alerts" class="container-fluid">
 
             <% if(error && error.length > 0){ %>
                 <div class="alert alert-danger" role="alert">

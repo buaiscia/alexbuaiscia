@@ -22,8 +22,8 @@ app.locals.moment = require('moment');
 
 // SETTING OTHER STUFF
 
-mongoose.connect("mongodb://localhost:27017/alexDB", { useNewUrlParser: true });
-
+var url = process.env.DATABASEURL || "mongodb://localhost:27017/alexDB"
+mongoose.connect(url, { useNewUrlParser: true });
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
@@ -48,7 +48,7 @@ const indexRoute = require("./routes/index");
 
 // SPACE ROUTE
 
-const spaceBlogRoute = require('./routes/space/spaceBlog');
+const spaceBlogRoute = require('./routes/space/spaceblog');
 const spaceCommentRoute = require('./routes/space/comments');
 
 
@@ -99,6 +99,8 @@ app.get('*', function(req, res) {
 
 // SERVER
 
-app.listen(4000, function() {
-    console.log("server started on port 4000");
+app.listen(process.env.PORT || 5000, function() {
+    console.log("server started on port 5000");
 });
+
+// app.listen(process.env.PORT, process.event.IP);
