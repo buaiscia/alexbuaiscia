@@ -205,6 +205,7 @@ img {
     position: relative;
     overflow: hidden;
     border-radius: 2%;
+    max-height: 290px;
     z-index: 1;
 }
 
@@ -361,10 +362,15 @@ a:active {
 #projects img {
     max-width: 600px;
     max-height: 300px;
+    width: 100%;
 }
 
 #skills img {
     max-height: 103px;
+}
+
+#skills i {
+    text-align: center;
 }
 
 #contact a:hover {
