@@ -10,6 +10,8 @@ const express = require("express"),
     methodOverride = require("method-override"),
     spacePost = require("./models/spacePost"),
     Comment = require("./models/spaceComment"),
+    devPost = require("./models/devPost"),
+    devComment = require("./models/devComment"),
     User = require("./models/user"),
     compression = require('compression'),
     helmet = require('helmet');
@@ -56,6 +58,7 @@ const spaceCommentRoute = require('./routes/space/comments');
 
 const devlifeRoute = require('./routes/dev/devlife');
 const devblogRoute = require('./routes/dev/devblog');
+const devCommentRoute = require('./routes/dev/devcomments');
 
 
 // PASSPORT CONFIGURATION
@@ -88,9 +91,7 @@ app.use('/spaceblog', spaceBlogRoute);
 app.use('/spaceBlog/:id/comments', spaceCommentRoute);
 app.use('/devlife', devlifeRoute);
 app.use('/devblog', devblogRoute);
-
-
-
+app.use('/devblog/:id/comments', devCommentRoute);
 
 
 app.get('*', function(req, res) {
