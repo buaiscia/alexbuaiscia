@@ -2,7 +2,7 @@ const express = require("express"),
     router = express.Router({ mergeParams: true }),
     bodyParser = require("body-parser"),
     devPost = require("../../models/devPost"),
-    devComments = require("../../models/devComment"),
+    devComment = require("../../models/devComment"),
     middleware = require("../../middleware");
 
 
@@ -17,7 +17,7 @@ router.get("/new", middleware.isLoggedIn, function(req, res) {
             req.flash("error", "Post not found")
             res.redirect("back");
         } else {
-            res.render("comments/new", { devPost: devPost });
+            res.render("devcomment/new", { devPost: devPost });
         }
     })
 });
@@ -59,7 +59,7 @@ router.get("/:comment_id/edit", middleware.checkDevCommentOwnership, function(re
             if (err) {
                 res.redirect("back");
             } else {
-                res.render("comments/edit", { devPost_id: req.params.id, comment: foundComment });
+                res.render("devcomments/edit", { devPost_id: req.params.id, comment: foundComment });
             }
         });
     });
