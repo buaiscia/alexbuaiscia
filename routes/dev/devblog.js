@@ -61,7 +61,7 @@ router.post("/", middleware.isLoggedIn, function(req, res) {
     let createdOn = moment(postedTime).toString();
     console.log(createdOn);
 
-    var newPost = {
+    var newDevPost = {
         name: name,
         image: image,
         description: description,
@@ -69,7 +69,7 @@ router.post("/", middleware.isLoggedIn, function(req, res) {
         author: author,
         createdOn: createdOn
     }
-    devPost.create(newPost, function(err, newlyCreated) {
+    devPost.create(newDevPost, function(err, newlyCreated) {
         if (err) {
             console.log(err);
         } else {

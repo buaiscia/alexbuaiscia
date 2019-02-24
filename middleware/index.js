@@ -55,7 +55,7 @@ middlewareObj.checkCommentOwnership = function(req, res, next) {
 
 middlewareObj.checkDevPostOwnership = function(req, res, next) {
     if (req.isAuthenticated()) {
-        spacePost.findById(req.params.id, function(err, foundPost) {
+        devPost.findById(req.params.id, function(err, foundPost) {
             if (err || !foundPost) {
                 req.flash("error", "Post not found")
                 res.redirect("back");
@@ -77,7 +77,7 @@ middlewareObj.checkDevPostOwnership = function(req, res, next) {
 
 middlewareObj.checkDevCommentOwnership = function(req, res, next) {
     if (req.isAuthenticated()) {
-        Comment.findById(req.params.comment_id, function(err, foundComment) {
+        devComment.findById(req.params.comment_id, function(err, foundComment) {
             if (err || !foundComment) {
                 req.flash("error", "Comment not found");
                 res.redirect("back");

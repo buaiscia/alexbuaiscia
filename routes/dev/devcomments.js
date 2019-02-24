@@ -59,7 +59,7 @@ router.get("/:comment_id/edit", middleware.checkDevCommentOwnership, function(re
             if (err) {
                 res.redirect("back");
             } else {
-                res.render("devcomments/edit", { devPost_id: req.params.id, comment: foundComment });
+                res.render("devcomment/edit", { devPost_id: req.params.id, comment: foundComment });
             }
         });
     });
