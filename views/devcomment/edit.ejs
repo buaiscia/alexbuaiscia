@@ -1,6 +1,5 @@
 <% include ../partials/header %>
-    <div class="row">
-        <h1 style="text-align: center">Edit Comment</h1>
+        <h2 style="text-align: center">Edit Comment</h2>
         <div style="width: 30%; margin: 25px auto;">
             <form action="/devblog/<%= devPost_id %>/devcomment/<%= comment._id %>?_method=PUT" method="POST">
                 <div class="form-group">
@@ -12,5 +11,4 @@
             </form>
             <a href="/devblog">Go Back</a>
         </div>
-    </div>
     <% include ../partials/footer %>
