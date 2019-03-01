@@ -403,3 +403,8 @@ a:active {
     -webkit-transform: scale(1.4, 1.4);
     transform: scale(1.4, 1.4);
 }
+
+#titleDevBlog {
+    font-family: 'Cinzel', serif;
+    font-size: 3.5em;
+}
