@@ -3,7 +3,9 @@ const express = require("express"),
     bodyParser = require("body-parser"),
     moment = require("moment"),
     spacePost = require("../../models/spacePost"),
-    middleware = require("../../middleware");
+    middleware = require("../../middleware"),
+    fs = require('fs');
+
 // seedDB = require("../../seeds");
 
 
@@ -78,6 +80,66 @@ router.post("/", middleware.isLoggedIn, function(req, res) {
         }
     })
 });
+
+//UPLOAD IMAGE ROUTE
+
+router.post('/upload_images', (req, res, next) => {
+    let formidable = require('formidable');
+    //parse a file upload
+    var form = new formidable.IncomingForm();
+    form.uploadDir = './public/img';
+    form.keepExtensions = true;
+    form.maxFieldsSize = 10 * 1024 * 1024; // 10 MB
+    form.multiples = true;
+    form.parse(req, (err, fields, files) => {
+        if (err) {
+            res.json({
+                results: "failed",
+                data: {},
+                message: `Cannot upload image. Error is ${err}`
+            });
+        }
+        var arrayOfFiles = files[""];
+        if (arrayOfFiles.length > 0) {
+            var fileNames = [];
+            arrayOfFiles.forEach(eachfile => {
+                // fileNames.push(eachfile.path);
+                fileNames.push(eachfile.path.split('\\')[2]);
+            });
+            res.json({
+                result: "ok",
+                data: fileNames,
+                numberOfImages: fileNames.length,
+                message: "Images uploaded successfully"
+            });
+        } else {
+            res.json({
+                result: "failed",
+                data: {},
+                numberOfImages: 0,
+                message: "No images to upload"
+            });
+        }
+    })
+
+});
+
+//VIEW IMAGE ROUTE
+
+router.get('/open_image', (req, res, next) => {
+    let imageName = './public/img/' + req.query.image_name;
+    fs.readFile(imageName, (err, imageData) => {
+        if (err) {
+            res.json({
+                result: "failed",
+                message: `Cannot read image. Error is : ${err}`
+            })
+        }
+        res.writeHead(200, { 'Content-type': 'image/jpeg' })
+        res.end(imageData);
+    })
+})
+
 
 //FORM FOR NEW POST
 
