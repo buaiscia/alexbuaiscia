@@ -50,7 +50,7 @@ router.get("/page/:page", function(req, res, next) {
 router.post("/", middleware.isLoggedIn, function(req, res) {
 
     var name = req.body.name;
-    var image = req.body.image;
+    var image = req.body.image_name;
     var description = req.body.description;
     var text = req.body.text;
     var author = {
@@ -123,22 +123,6 @@ router.post('/upload_images', (req, res, next) => {
     })
 
 });
-
-//VIEW IMAGE ROUTE
-
-router.get('/open_image', (req, res, next) => {
-    let imageName = './public/img/' + req.query.image_name;
-    fs.readFile(imageName, (err, imageData) => {
-        if (err) {
-            res.json({
-                result: "failed",
-                message: `Cannot read image. Error is : ${err}`
-            })
-        }
-        res.writeHead(200, { 'Content-type': 'image/jpeg' })
-        res.end(imageData);
-    })
-})
 
 
 //FORM FOR NEW POST
