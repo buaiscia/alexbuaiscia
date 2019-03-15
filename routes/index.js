@@ -26,7 +26,7 @@ router.post("/register", function(req, res) {
         }
         passport.authenticate("local")(req, res, function() {
             req.flash("success", "Welcome to my site " + user.username);
-            res.redirect("/spaceBlog");
+            res.redirect(req.session.redirectTo || '/');
         });
     });
 });
@@ -37,18 +37,48 @@ router.get("/login", function(req, res) {
 });
 
 //handling login logic
-router.post("/login", passport.authenticate("local", {
-    successRedirect: "/spaceBlog",
-    successFlash: true,
-    failureRedirect: "/login",
-    failureFlash: true
-}), function(req, res) {});
+
+
+// router.post("/login", passport.authenticate("local", {
+
+//     successRedirect: 'back',
+//     successFlash: true,
+//     failureRedirect: "/login",
+//     failureFlash: true
+// }));
+
+router.post('/login', function(req, res, next) {
+    passport.authenticate('local', function(err, user, info) {
+        if (err) {
+            next(err);
+            return
+        }
+        // User does not exist
+        if (!user) {
+            req.flash('error', 'Invalid username or password');
+            res.redirect('/login');
+            return
+        }
+        req.logIn(user, function(err) {
+            // Invalid password
+            if (err) {
+                req.flash('error', 'Invalid username or password');
+                next(err);
+                return
+            }
+            res.redirect(req.session.redirectTo || '/');
+            return
+        });
+    })(req, res, next);
+});
+
+
 
 // logout route
 router.get("/logout", function(req, res) {
     req.logout();
     req.flash("success", "Logged you out!");
-    res.redirect("/spaceBlog");
+    res.redirect("/");
 });
 
 

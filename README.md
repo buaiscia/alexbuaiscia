@@ -1,5 +1,11 @@
 # alexbuaiscia
 
 #TODO:
-    - routes and views for Writing section
-    - adding alt when inserting images for posts (and to all img in general)
+    - take off writing section
+    - insert upload images in newposts
+
+#VERSION 
+
+	- WRITING: 0.0
+	- SPACE: 1.0
+	- DEV: 1.1

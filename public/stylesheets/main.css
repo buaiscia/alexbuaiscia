@@ -1,6 +1,7 @@
 html {
-    position: relative;
-    min-height: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 body {
@@ -15,12 +16,13 @@ body {
     /* bottom = footer height */
     padding: 0;
     padding-bottom: 10%;
-    max-width: 100%;
+    height: 100vh;
     font-family: 'Old Standard TT', serif;
 }
 
 footer {
-    position: absolute;
+    flex-shrink: 0;
+    /* position: absolute; */
     left: 0;
     bottom: 0;
     width: 100%;
@@ -205,6 +207,7 @@ img {
     position: relative;
     overflow: hidden;
     border-radius: 2%;
+    max-height: 290px;
     z-index: 1;
 }
 
@@ -361,10 +364,15 @@ a:active {
 #projects img {
     max-width: 600px;
     max-height: 300px;
+    width: 100%;
 }
 
 #skills img {
     max-height: 103px;
+}
+
+#skills i {
+    text-align: center;
 }
 
 #contact a:hover {
@@ -396,4 +404,14 @@ a:active {
 #projects img:hover {
     -webkit-transform: scale(1.4, 1.4);
     transform: scale(1.4, 1.4);
+}
+
+#titleDevBlog {
+    font-family: 'Cinzel', serif;
+    font-size: 3.5em;
+}
+
+.portfolioimg {
+    max-width: 600px;
+    max-height: 300px;
 }
