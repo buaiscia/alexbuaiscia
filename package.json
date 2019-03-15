@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "snyk test"
+    "test": "snyk test",
+	"start": "node app.js"
   },
   "author": "Alex Buaiscia",
   "license": "ISC",
