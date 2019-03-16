@@ -17,7 +17,7 @@
                 <p>
                     <em class="float-right" id="submittedby">Submitted by <%= devPost.author.username %> on <%= moment(devPost.createdOn).format('dddd DD/MM/YYYY');  %></em>
                 </p>
-                <img id="postImage" class="img-responsive float-left" src="<%= devPost.image %>">
+                <img id="postImageDev" class="img-responsive float-right" src="<%= devPost.image %>">
                 <div class="postText">
                     <p>
                         <%- devPost.text %>

@@ -144,6 +144,12 @@ img {
     border-top: 50px solid transparent;
 }
 
+#postImageDev {
+    max-width: 400px;
+    border-left: 20px solid transparent;
+    border-top: 50px solid transparent;
+}
+
 #titleSpace {
     padding-top: 10px;
     font-family: 'Monoton', cursive;
