@@ -31,11 +31,14 @@ footer {
 }
 
 h2 {
+    font-family: 'Cinzel', serif;
+
     text-align: center;
     padding-top: 80px;
     margin-top: -80px;
     -webkit-background-clip: content-box;
     background-clip: content-box;
+
 }
 
 #navStyle {
@@ -268,6 +271,7 @@ hr {
 }
 
 .devMenu {
+    font-family: 'Cinzel', serif;
     padding: 0px 15px 0 0;
     text-align: right;
     font-size: 36px;
@@ -295,9 +299,17 @@ a:active {
 }
 
 .sectionTitle {
+    font-family: 'Cinzel', serif;
+
     font-size: 48px;
     text-align: center;
     margin-top: 30px;
+}
+
+.portfolioTitle {
+    font-family: 'Cinzel', serif;
+    font-size: 48px;
+    text-align: center;
 }
 
 .spaceSection {

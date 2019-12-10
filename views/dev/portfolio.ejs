@@ -1,35 +1,32 @@
 <% include ../partials/header %>
 
-<h2>Portfolio</h2>
+    <div id="projects" class="row; padding-bottom: 10px;">
+        <div class="col-md-12">
+            <h2 class="portfolioTitle">Portfolio</h2>
+            <section id="projects" style="margin: 2% 0;" class="d-flex flex-column flex-lg-row justify-content-between">
+                <div style="margin: auto">
+                    <img src="../img/alexbuaiscia.jpg" alt="main website of mine">
+                    <br>
+                    <p id="caption">Main website.
+                        <br>Functions: login and sign-up; GUI to write and post on-line.
+                        <br>
+                        <span style="font-weight: 600">Technologies used: HTML5/CSS3, NodeJS, EJS, JS, MongoDB</span>
+                    </p>
+                </div>
+                <div style="margin: auto; text-align: center">
+                    <img src="../img/deployment_tool.jpg" alt="developed deployment tool">
+                    <br>
+                    <p id="caption">Work related deployment tool. Functions: upload files on an automation server;
+                        <br>Loading the wanted file on one application server and running shell scripts
+                        <br>to deploy and sync all the servers with the given parameters.
+                        <br>
+                        <span style="font-weight: 600">Technologies used: HTML5/CSS3, NodeJS, EJS, JS, Shell/Bash</span>
+                    </p>
+                </div>
 
-<section id="pki">
-    <h3>PKI tool</h3>
-    <div class="d-flex flex-column flex-lg-row justify-content-between">
-        <div>
-            <img class="portfolioimg" src="../img/deployment_tool.jpg" alt="developed deployment tool">
-            <br><p id="caption">Work related deployment tool</p>
+            </section>
         </div>
-        <div>
-            <img class="portfolioimg" src="../img/deployment_tool.jpg" alt="developed deployment tool">
-            <br><p id="caption">Work related deployment tool</p>
-        </div>
-        
-        
-
     </div>
-    <div>
-        
-    </div>
-
-        <div>
-            <img class="portfolioimg" src="../img/deployment_tool.jpg" alt="developed deployment tool">
-            <br><p id="caption">Work related deployment tool</p>
-        </div>
-        <div>
-            <img class="portfolioimg" src="../img/deployment_tool.jpg" alt="developed deployment tool">
-            <br><p id="caption">Work related deployment tool</p>
-        </div>  
-</section>
 
 
-<% include ../partials/footer %>
+    <% include ../partials/footer %>
