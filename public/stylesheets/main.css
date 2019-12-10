@@ -481,3 +481,9 @@ a:active {
     max-width: 600px;
     max-height: 300px;
 }
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1.2fr);
+    grid-auto-rows: minmax(100px, auto);
+}
