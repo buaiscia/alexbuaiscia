@@ -277,15 +277,61 @@ hr {
     padding: 0px 15px 0 0;
     text-align: right;
     font-size: 36px;
+    
 }
 
 .devMenu a {
     color: black;
     border: 1px;
+    
 }
 
+
+
 .devMenu a:hover {
-    color: blue;
+    animation: colorchange 1s forwards;
+    
+}
+
+.devMenu > li {
+    position: relative;
+}
+
+.devMenu > li:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  .devMenu  > li:hover:after {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+
+
+
+@keyframes colorchange {
+    0% {
+        color: black;
+        text-decoration-line: none;
+
+    }
+    100% {
+        /* color: green; */
+        color: rgb(4, 196, 196);
+        /* text-decoration-line: underline; */
+        /* font-weight: 800; */
+    }
 }
 
 ul li {
