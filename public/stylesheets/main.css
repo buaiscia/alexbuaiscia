@@ -153,10 +153,10 @@ img {
     border-top: 50px solid transparent;
 }
 
-#postImageDev {
+.postImageDev {
     max-width: 400px;
-    border-left: 20px solid transparent;
-    border-top: 50px solid transparent;
+    border: 30px solid transparent;
+    border-radius: 20%;
 }
 
 .titleSpace {
@@ -166,8 +166,8 @@ img {
     text-shadow: 4px 4px 4px #aaa;
 }
 
-#submittedby {
-    text-align: right;
+.submittedby {
+    text-align: left;
 }
 
 #editor-container {
