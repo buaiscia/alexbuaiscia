@@ -1,11 +1,17 @@
 # alexbuaiscia
 
 #TODO:
-    - take off writing section
-    - insert upload images in newposts
+    
+    - change font on homepage
+    - change color on drop text on home
+    - resize images on devlife
+    - review style of login/signup page
+    - add 'alert' of logoff
+    - add pages for other projects
+    - add skills section for each project
+    - add some padding-bottom on portfolio page between images
+    - restyle blog page
 
 #VERSION
 
-        - WRITING: 0.0
-        - SPACE: 1.0
-        - DEV: 1.1
+    1.5
