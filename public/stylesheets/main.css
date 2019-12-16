@@ -1,8 +1,24 @@
+* {
+ box-sizing: border-box;
+}
+
+*:before,
+*:after {
+ box-sizing: border-box;
+}
+
+
+html,body {
+    height: 100%;
+    position: relative;
+}
+
 html {
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
     flex-direction: column;
     scroll-behavior: smooth;
+
 
 }
 
@@ -41,6 +57,14 @@ h2 {
     -webkit-background-clip: content-box;
     background-clip: content-box;
 
+}
+
+main {
+    min-height: 100vh; /* will cover the 100% of viewport */
+ overflow: hidden;
+ display: block;
+ position: relative;
+ padding-bottom: 3em; /* height of your footer */
 }
 
 /* HEADER */
@@ -365,6 +389,21 @@ a:active {
     text-decoration: none;
 }
 
+
+
+#skills img {
+    max-height: 103px;
+}
+
+#skills i {
+    text-align: center;
+}
+
+#contact a:hover {
+    font-weight: 600;
+}
+
+
 /* PORTFOLIO */
 
 .sectionTitle {
@@ -454,17 +493,25 @@ a:active {
     width: 100%;
 }
 
-#skills img {
-    max-height: 103px;
+.portfolioimg {
+    max-width: 600px;
+    max-height: 300px;
 }
 
-#skills i {
-    text-align: center;
+.projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1.2fr);
+    grid-auto-rows: minmax(100px, auto);
 }
 
-#contact a:hover {
-    font-weight: 600;
+.gif {
+    max-width: 700px;
+    max-height: auto;
+    padding: 50px;
 }
+
+/* FOOTER */
+
 
 .footer .fab {
     color: white;
@@ -509,13 +556,3 @@ a:active {
     font-size: 3.5em;
 }
 
-.portfolioimg {
-    max-width: 600px;
-    max-height: 300px;
-}
-
-.projects {
-    display: grid;
-    grid-template-columns: repeat(2, 1.2fr);
-    grid-auto-rows: minmax(100px, auto);
-}
