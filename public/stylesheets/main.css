@@ -572,8 +572,13 @@ a:active {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
 }
+
 .respImg {
-    display: none;
+    display: none!important;
+}
+
+.formdiv {
+    margin-right: 3rem;
 }
 
 
