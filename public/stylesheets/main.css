@@ -510,6 +510,8 @@ a:active {
     padding: 50px;
 }
 
+
+
 .descPortfolio {
     padding: 2rem 6rem;
 }
@@ -554,9 +556,92 @@ a:active {
     
 } */
 
+.formclass {
+    border:1px solid #000000;
+    padding:3px;
+    text-align:center;
+}
+
 
 #titleDevBlog {
     font-family: 'Cinzel', serif;
     font-size: 3.5em;
+}
+
+.d-flex > i {
+    margin-top: 1rem;
+}
+
+.d-flex > img {
+    margin-top: 1rem;
+}
+
+
+
+/* PORTABLE DEVICES */
+
+@media only screen and (max-width: 600px) {
+    .card-info {
+        position: relative;
+        z-index: 5;
+        transition: none;
+        visibility: visible;
+        opacity: 1;
+    }
+    .carousel {
+        visibility: hidden;
+        position: absolute;
+    }
+    .gif {
+        max-width: -webkit-fill-available;
+    }
+    .twitterline {
+        display: none;
+    }
+    .formdiv {
+        display: none;
+    }
+    .projects {
+        grid-template-columns: repeat(1, 1.2fr);
+    }
+    .projects > div {
+        padding: 1.5rem 0;
+    }
+    .card-columns {
+        column-count: 1;
+    }
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .card-info {
+        position: relative;
+        z-index: 5;
+        transition: none;
+        visibility: visible;
+        opacity: 1;
+    }
+    .carousel {
+        visibility: hidden;
+        position: absolute;
+    }
+    .gif {
+        max-width: -webkit-fill-available;
+    }
+    .twitterline {
+        display: none;
+    }
+    .formdiv {
+        display: none;
+    }
+    .projects {
+        grid-template-columns: repeat(1, 1.2fr);
+    }
+    .projects > div {
+        padding: 1.5rem 0;
+    }
+    .card-columns {
+        column-count: 1;
+    }
 }
 
