@@ -393,6 +393,7 @@ a:active {
 
 #skills img {
     max-height: 103px;
+    margin:  20px auto;
 }
 
 #skills i {
@@ -408,10 +409,9 @@ a:active {
 
 .sectionTitle {
     font-family: 'Cinzel', serif;
-
     font-size: 48px;
     text-align: center;
-    margin-top: 30px;
+    margin: 1.2rem 0 1.2rem 0;
 }
 
 .portfolioTitle {
@@ -568,18 +568,12 @@ a:active {
     font-size: 3.5em;
 }
 
-.d-flex > i {
-    margin-top: 1rem;
-}
-
-.d-flex > img {
-    margin-top: 1rem;
-}
-
-
 .skillset {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+}
+.respImg {
+    display: none;
 }
 
 
@@ -616,6 +610,12 @@ a:active {
     .card-columns {
         column-count: 1;
     }
+    .skillset {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .respImg {
+        display: block;
+    }
 }
 
 
@@ -648,6 +648,9 @@ a:active {
     }
     .card-columns {
         column-count: 1;
+    }
+    .respImg {
+        display: block;
     }
 }
 
