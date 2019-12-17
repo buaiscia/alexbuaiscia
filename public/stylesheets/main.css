@@ -62,7 +62,7 @@ footer {
 
 h2 {
     font-family: 'Cinzel', serif;
-
+    font-size: 3rem;
     text-align: center;
     padding-top: 80px;
     margin-top: -80px;
@@ -255,13 +255,32 @@ img {
     margin-bottom: 15px;
 }
 
-.pagination {
+/* .pagination {
     margin: 20px;
     font-weight: bold;
     font-size: 1.5em;
-}
+} */
+
+
+.pagination { 
+    display: inline-block; 
+    margin-top: 2rem;
+} 
+  
+.pagination a { 
+    font-weight:bold; 
+    font-size:20px; 
+    color: black; 
+    padding: 8px 16px; 
+    text-decoration: none; 
+} 
 
 /* MAIN PAGE -DEV LIFE */
+
+.sectionTitle {
+    margin: 1.2rem 0 1.2rem 0;
+}
+
 
 .btnSlide1 {
     font-size: 40px;
@@ -326,8 +345,9 @@ img {
     position: relative;
     overflow: hidden;
     border-radius: 2%;
-    max-height: 290px;
-    max-width: fit-content;
+    max-height: 200px;
+    max-width:  200px;
+    margin: 10px;
     z-index: 1;
 }
 
@@ -452,18 +472,6 @@ a:active {
 
 /* PORTFOLIO */
 
-.sectionTitle {
-    font-family: 'Cinzel', serif;
-    font-size: 48px;
-    text-align: center;
-    margin: 1.2rem 0 1.2rem 0;
-}
-
-.portfolioTitle {
-    font-family: 'Cinzel', serif;
-    font-size: 48px;
-    text-align: center;
-}
 
 .spaceSection {
     padding-left: 10%;
@@ -648,11 +656,6 @@ a:active {
     text-align:center;
 }
 
-
-#titleDevBlog {
-    font-family: 'Cinzel', serif;
-    font-size: 3.5em;
-}
 
 .skillset {
     display: grid;
