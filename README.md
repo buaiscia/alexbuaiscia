@@ -2,7 +2,6 @@
 
 #TODO:
     
-    - change font on homepage
     - change color on drop text on home
     - resize images on devlife
     - review style of login/signup page
