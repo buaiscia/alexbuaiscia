@@ -2,7 +2,6 @@
 
 #TODO:
     
-    - resize images on devlife
     - review style of login/signup page
     - add 'alert' of logoff
     - add pages for other projects

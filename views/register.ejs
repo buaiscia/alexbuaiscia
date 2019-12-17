@@ -1,8 +1,8 @@
 <% include ./partials/header %>
 
-    <div style="margin-top: 100px;">
-        <h1 style="text-align:center">Sign Up</h1>
-        <div style="width:30%; margin: 80px auto;">
+    <div>
+        <h2>Sign Up</h2>
+        <div class="signform">
             <form action="/register" method="POST">
                 <div class="form-group">
                     <input type="text" name="username" placeholder="username">
@@ -20,5 +20,6 @@
             <a href="javascript:history.back()">Go Back</a>
         </div>
     </div>
+    
 
     <% include ./partials/footer %>

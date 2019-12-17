@@ -1,3 +1,15 @@
+:root {
+    --body_gradient_left:#7200D0;
+    --body_gradient_right: #C800C1;
+    --form_bg: #ffffff;
+    --input_bg: #E5E5E5;
+    --input_hover:#eaeaea;
+    --submit_bg: #1FCC44;
+    --submit_hover: #40e263;
+    --icon_color:#6b6b6b;
+}
+
+
 * {
  box-sizing: border-box;
 }
@@ -614,6 +626,106 @@ a:active {
 .formdiv {
     margin-right: 3rem;
 }
+
+/* LOGIN - SIGNUP*/
+
+.signform {
+    width: 500px;
+    height: 300px;
+    /* this will help us center it*/
+    margin:auto;
+    background-color: transparent;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.signform form {
+    padding: 2rem;
+}
+
+form > div {
+    margin: 1rem 0;
+}
+
+.input_container > i {
+    margin-right: 2%;
+}
+
+.input_container {
+    background-color: var(--input_bg);
+    /* vertically align icon and text inside the div*/
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.input_container:hover {
+    background-color: var(--input_hover);
+}
+
+.input_container,
+#input_submit {
+    height: 40px;
+    /* make the borders more round */
+    border-radius: 30px;
+    width: 100%;
+}
+
+.input_field {
+    /* customize the input tag with lighter font and some padding*/
+    color: var(--icon_color);
+    background-color: var(--input_bg);
+    width: 90%;
+    border: none;
+    font-size: 1.3rem;
+    font-weight: 400;
+    padding-left: 30px;
+}
+
+.input_field:hover,
+.input_field:focus {
+    /* remove the outline */
+    outline: none;
+}
+
+.sub {
+    display: grid;
+    grid-template-columns: repeat(2, 1.2fr);
+    grid-column-gap: 20px;
+
+}
+
+#input_submit {
+    /* submit button has a different color and different padding */
+    background-color: var(--submit_bg);
+    padding-left: 0;
+    font-weight: bold;
+    color: white;
+}
+
+#input_submit:hover {
+    background-color: var(--submit_hover);
+    /* simple color transition on hover */
+    transition: background-color,
+        1s;
+    cursor: pointer;
+}
+
+#backbtn {
+    height: 40px;
+    border-radius: 20px;
+    width: 100%;
+    background-color: tomato;
+    color: white;
+}
+
+#backbtn:hover {
+    background-color: salmon;
+    transition: background-color 1s;
+    cursor: pointer;
+}
+
+
 
 
 
