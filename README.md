@@ -2,11 +2,9 @@
 
 #TODO:
     
-    - review style of login/signup page
     - add 'alert' of logoff
     - add pages for other projects
     - add skills section for each project
-    - add some padding-bottom on portfolio page between images
     - restyle blog page
     - restyle pagination
     - add GH repos to projects

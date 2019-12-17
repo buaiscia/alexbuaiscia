@@ -71,6 +71,12 @@ h2 {
 
 }
 
+h3 {
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
 
 main {
     min-height: 100vh; /* will cover the 100% of viewport */
@@ -548,6 +554,8 @@ a:active {
     display: grid;
     grid-template-columns: repeat(2, 1.2fr);
     grid-auto-rows: minmax(100px, auto);
+    grid-row-gap: 2rem;
+
 }
 
 .gif {
@@ -556,11 +564,40 @@ a:active {
     padding: 50px;
 }
 
-
-
 .descPortfolio {
-    padding: 2rem 6rem;
+    padding: 2rem 6rem 0 6rem;
 }
+
+.skillsetport {
+    text-align: center;
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(3, 0.9fr);
+    margin: auto;
+}
+
+
+.skillsetport > div > p {
+    text-decoration: underline;
+    font-size: 1.4rem;
+}
+
+.skillsetport > div > p ~ p {
+    text-decoration: none;
+    font-size: unset;
+}
+
+.skillsetport img {
+    max-height: 50px;
+    margin:  20px auto;
+}
+
+.resizedImgPort {
+    max-width: 80px; 
+    height: auto; 
+    padding-left: 5%;
+}
+
 
 /* FOOTER */
 
