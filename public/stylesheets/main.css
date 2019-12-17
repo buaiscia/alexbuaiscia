@@ -590,13 +590,16 @@ a:active {
 .skillsetport img {
     max-height: 50px;
     margin:  20px auto;
-}
-
-.resizedImgPort {
     max-width: 80px; 
     height: auto; 
     padding-left: 5%;
 }
+
+/* .resizedImgPort {
+    max-width: 80px; 
+    height: auto; 
+    padding-left: 5%;
+} */
 
 
 /* FOOTER */

@@ -3,11 +3,8 @@
 #TODO:
     
     - add 'alert' of logoff
-    - add pages for other projects
-    - add skills section for each project
     - restyle blog page
     - restyle pagination
-    - add GH repos to projects
     - add link to blog
     - add link to website on the blog
 
