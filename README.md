@@ -3,8 +3,6 @@
 #TODO:
     
     - add 'alert' of logoff
-    - restyle blog page
-    - restyle pagination
     - add link to blog
     - add link to website on the blog
 

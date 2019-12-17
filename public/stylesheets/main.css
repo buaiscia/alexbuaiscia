@@ -462,6 +462,7 @@ a:active {
 
 #contact a:hover {
     font-weight: 600;
+    color: darkblue!important;
 }
 
 .carousel-item > img {

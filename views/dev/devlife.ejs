@@ -1,6 +1,6 @@
 <% include ../partials/header %>
 
-    
+
 
     <div>
         <div class="row">
@@ -37,7 +37,7 @@
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img  class="d-block w-100" src="../img/desk.jpg" alt="Second slide">
+                            <img class="d-block w-100" src="../img/desk.jpg" alt="Second slide">
                             <div class="carousel-caption d-none d-md-block btnSlide">
                                 <a href="/devblog">
                                     <button type="button" class="btn btn-default btnSlide2">Sharing some knowledge
@@ -120,10 +120,10 @@
                 <h2 class="sectionTitle">Contacts</h2>
 
                 <section class="d-flex flex-row">
-                    <div class="twitterline" style="margin: 1% 5%;">
+                    <div class="twitterline" style="margin: 1% 3%;">
                         <a class="twitter-timeline" data-width="600" data-height="400" data-theme="dark" href="https://twitter.com/AlexBuaiscia?ref_src=twsrc%5Etfw">Tweets by AlexBuaiscia</a>
                     </div>
-                    <div style="margin: 1% 5%; font-size: 26px;  ">
+                    <div style="margin: 1% 3%; font-size: 1.6rem;">
                         <p> Get in touch:
                         </p>
                         <p>
@@ -131,18 +131,22 @@
                         <p>
                             <i class="fa fa-envelope"></i>
                             <a style="text-decoration:none; color:inherit;" href="mailto: alex.buaiscia@gmail.com">
-                            alex.buaiscia@gmail.com</a>
+                                alex.buaiscia@gmail.com</a>
                         </p>
                         <p>
                             <i class="fab fa-linkedin-in"></i>
-                            <a style="text-decoration:none; color:inherit;" href="https://www.linkedin.com/in/alex-buaiscia/">
-                            Write me a message on Linkedin</a>
+                            <a style="text-decoration:none; color:inherit;" href="https://www.linkedin.com/in/alex-buaiscia/" target="__blank">
+                                Contact me on Linkedin</a>
+                        </p>
+                        <p>
+                            <i class="fab fa-github-square"></i>
+                            <a style="text-decoration:none; color:inherit;" href="https://buaiscia.github.io/" target="__blank">
+                                Go to my Github page and blog</a>
                         </p>
 
                     </div>
                     <div class="formdiv">
-                        <form class="formclass" action="https://tinyletter.com/buaiscia" method="post"
-                            target="popupwindow" onsubmit="window.open('https://tinyletter.com/buaiscia', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+                        <form class="formclass" action="https://tinyletter.com/buaiscia" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/buaiscia', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
                             <p style="margin: 1% 5%; font-size: 22px;">
                                 <label for="tlemail">Subscribe to my newsletter: enter your email</label>
                             </p>
@@ -150,8 +154,9 @@
                                 <input type="text" style="width:140px" name="email" id="tlemail" />
                             </p>
                             <input type="hidden" value="1" name="embed" />
-                            <input type="submit" value="Subscribe" />
-                            <p style="font-size:0.8rem;">
+                            <input style="width: 40%; margin: auto; display: inline;" class="input_container" id="input_submit" type="submit" value="Subscribe"
+                            />
+                            <p style="font-size:0.8rem; padding-top: 15px;">
                                 <a href="https://tinyletter.com" target="_blank">powered by TinyLetter</a>
                             </p>
                         </form>
