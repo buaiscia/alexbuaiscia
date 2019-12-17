@@ -275,12 +275,17 @@ img {
     text-decoration: none; 
 } 
 
-/* MAIN PAGE -DEV LIFE */
+/* MAIN PAGE -DEVLIFE */
 
 .sectionTitle {
     margin: 1.2rem 0 1.2rem 0;
 }
 
+.aboutMain {
+    text-align: center; 
+    font-size: 1.5rem; 
+    margin: 2% 1%;
+}
 
 .btnSlide1 {
     font-size: 40px;
@@ -604,6 +609,10 @@ a:active {
     padding-left: 5%;
 }
 
+.toollist {
+    margin: 0 7rem;
+}
+
 /* .resizedImgPort {
     max-width: 80px; 
     height: auto; 
@@ -776,6 +785,12 @@ form > div {
 /* PORTABLE DEVICES */
 
 @media only screen and (max-width: 600px) {
+    h2 {
+        font-size: 2.5rem;
+    }
+    #landingtitle{
+        font-size: 4rem;
+    }
     .card-info {
         position: relative;
         z-index: 5;
@@ -811,10 +826,25 @@ form > div {
     .respImg {
         display: block!important;
     }
+    .containerNav {
+        text-align: justify;
+    }
+    .descPortfolio {
+        padding: 2rem 3rem 0 3rem;
+    }
+    .toollist {
+        margin: 0 2rem;
+    }
 }
 
 
 @media only screen and (max-width: 1024px) {
+    h2 {
+        font-size: 2.5rem;
+    }
+    #landingtitle{
+        font-size: 4rem;
+    }
     .card-info {
         position: relative;
         z-index: 5;
@@ -846,6 +876,15 @@ form > div {
     }
     .respImg {
         display: block!important;
+    }
+    .containerNav {
+        text-align: justify;
+    }
+    .descPortfolio {
+        padding: 2rem 3rem 0 3rem;
+    }
+    .toollist {
+        margin: 0 2rem;
     }
 }
 
