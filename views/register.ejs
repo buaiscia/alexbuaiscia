@@ -1,5 +1,5 @@
 <% include ./partials/header %>
-
+<!-- 
     <div>
         <h2>Sign Up</h2>
         <div class="signform">
@@ -19,7 +19,33 @@
             </form>
             <a href="javascript:history.back()">Go Back</a>
         </div>
-    </div>
-    
+    </div> -->
 
-    <% include ./partials/footer %>
+
+    <div>
+        <h2>Sign Up</h2>
+        <div class="signform">
+            <form action="/register" method="POST">
+                <div class="input_container">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="username" id="field_email" class='input_field' placeholder="username">
+                </div>
+                <div class="input_container">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password" id="field_password" class='input_field' placeholder="password">
+                </div>
+                <div class="input_container">
+                    <i class="fas fa-lock"></i>
+                    <input type="text" name="email" id="field_email" class='input_field' placeholder="email (not manadatory)">
+                </div>
+                <div class="sub">
+                    <input type="submit" id='input_submit' class="input_field" value="Sign up">
+                    <a href="javascript:history.back()">
+                        <button id='backbtn' class="input_field">Go Back</button>
+                    </a>
+                </div>
+            </form>
+        </div>
+
+
+        <% include ./partials/footer %>
