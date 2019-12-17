@@ -2,7 +2,6 @@
 
 #TODO:
     
-    - change color on drop text on home
     - resize images on devlife
     - review style of login/signup page
     - add 'alert' of logoff

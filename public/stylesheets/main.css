@@ -245,18 +245,37 @@ img {
 
 /* MAIN PAGE -DEV LIFE */
 
-.btnSlide {
+.btnSlide1 {
     font-size: 40px;
     height: auto;
     width: auto;
     min-width: 100px;
-    /* margin-bottom: 20%; */
+    background-color: transparent;
+
 }
 
-.btnSlide:hover {
+.btnSlide2 {
+    font-size: 40px;
+    font-weight: bold;
+    height: auto;
+    width: auto;
+    min-width: 100px;
+    background-color: transparent;
+    color: aliceblue;
+
+}
+
+.btnSlide1:hover {
     animation-name: scaling;
-    animation-duration: 2s;
-    animation-timing-function: ease;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    /* transform: scale(1.1); */
+}
+
+.btnSlide2:hover {
+    animation-name: scaling;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
     /* transform: scale(1.1); */
 }
 
@@ -267,7 +286,7 @@ img {
 }
 
 .carousel-caption {
-    bottom: 250px;
+    bottom: 50%
 }
 
 .card-columns {
@@ -405,6 +424,11 @@ a:active {
 
 #contact a:hover {
     font-weight: 600;
+}
+
+.carousel-item > img {
+    max-height: 450px;
+    max-width: auto;
 }
 
 
