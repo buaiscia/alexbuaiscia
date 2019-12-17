@@ -1,8 +1,64 @@
 <% include ../../partials/header %>
 
     <h2>
-        page for deployment tool
+        Deployment tool application
     </h2>
+    <p class="descPortfolio">
+        Created in 2018, this application is setup on the needs from my job to do an automatic deployment. Its functionalities:</p>
+    <ol style="margin: 0 7rem;">
+        <li>Upload the application package to install from a third party;</li>
+        <li>Deploy it on the first server of the cluster: </li>
+        <ol>
+            <li>Create backup</li>
+            <li>Call a bash script with selected parameters from FE to deploy the package</li>
+            <li>Restart the service/s on the Apache server</li>
+        </ol>
+        <li>Display the deployment log on the main page with INFO/WARNING/ERROR tags</li>
+        <li>Call another bash script to make a mockup sync on the second server of the cluster</li>
+        <li>Call a bash script with given FE parameters to sync all the cluster and restart the needed services</li>
+    </ol>
+    <br/>
+    <p style="margin: 0 7rem;">The application relies on EJS for frontend and NodeJS / Express for backend. It is deployed on some automation server
+        and talk to the application server through ssh.
+    </p>
+    <div style="text-align: center">
+        <img class="gif" src="../img/pkitool_opt.gif"></img>
+    </div>
+
+    <h3>Skill set</h3>
+    <section class='skillsetport'>
+        <div>
+            <p>Frontend</p>
+            <p>HTML5 - CSS3 - JS - EJS</p>
+            <p>
+                <img src="../img/if_html5_294678.svg" alt="HTML5">
+                <img src="../img/if_css3_294692.svg" alt="CSS3">
+                <img src="../img/JS.png" alt="JS">
+                <img src="../img/ejs.jpg" alt="EJS">
+
+            </p>
+        </div>
+        <div>
+            <p>Backend</p>
+            <p>NodeJS - Express - NPM - Apache</p>
+            <p>
+                <img src="../img/nodejs.png" alt="NodeJS">
+                <img class="resizedImgPort" src="../img/express.png" alt="NodeJS">
+                <img class="resizedImgPort" src="../img/npm.png" alt="NPM">
+                <img class="resizedImgPort" src="../img/apache.jfif" alt="Apache">
+            </p>
+        </div>
+        <div>
+            <p>Storage</p>
+            <p>Linux server</p>
+            <p>
+                <img src="../img/linux.svg" alt="Linux">
+            </p>
+        </div>
+
+    </section>
+
+    <a href="https://github.com/buaiscia/newPKI" target="__blank"><h3>Repository on Github</h3></a>
 
 
     <% include ../../partials/footer %>
