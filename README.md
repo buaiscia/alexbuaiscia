@@ -3,7 +3,6 @@
 #TODO:
     
     - add 'alert' of logoff
-    - add link to website on the blog
 
 #MOBILE TODO:
 
