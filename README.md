@@ -3,6 +3,9 @@
 #TODO:
     
     - add 'alert' of logoff
+    - reduce all images weight
+    - check git img link in blog post
+    - missing gifs on portfolio pages
 
 #MOBILE TODO:
 
