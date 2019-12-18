@@ -1,7 +1,7 @@
 <% include ../partials/header %>
     <div class="spaceSection">
         <div class="row">
-            <h1 id="titleSpace" class="my-4">Space blog
+            <h1 class="my-4 titleSpace">Space blog
             </h1>
             <div class="moon">
             </div>
@@ -16,7 +16,7 @@
 
                             <% spacePosts.forEach(function(post){ %>
                                 <div class="container">
-                                    <div id="posts" class="card rounded shadow">
+                                    <div class="card rounded shadow posts">
 
                                         <!-- <div class="card-img-top"> -->
                                         <img class="item card-img" src="<%= post.image %>">
@@ -28,7 +28,7 @@
                                                 <%= post.description %>
                                             </p>
                                             <p style="margin: 20px 1%">
-                                                <a href="/spaceblog/<%= post._id %>" id="readMore" class="btn btn-primary">Read more &rarr;</a>
+                                                <a href="/spaceblog/<%= post._id %>" class="btn btn-primary readMore">Read more &rarr;</a>
                                             </p>
                                             <!-- </div> -->
 

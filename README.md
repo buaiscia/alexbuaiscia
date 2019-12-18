@@ -1,11 +1,14 @@
 # alexbuaiscia
 
 #TODO:
-    - take off writing section
-    - insert upload images in newposts
+    
+    - add 'alert' of logoff
 
-#VERSION 
+#MOBILE TODO:
 
-	- WRITING: 0.0
-	- SPACE: 1.0
-	- DEV: 1.1
+    - adj max-height on horizontal mode iphone/ipad + resize font
+    - maxheight hidden img restyle for horizontal mode (smaller)
+
+#VERSION
+
+    2

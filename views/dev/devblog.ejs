@@ -1,88 +1,91 @@
 <% include ../partials/header %>
     <div class="spaceSection">
         <div class="row">
-            <h1 id="titleDevBlog" class="my-4">Dev blog
-            </h1>
-            </div>
-            <div class="col-md-10 col-sm-10 col-lg-10">
+            <h2 style="padding-bottom: 30px;">Dev blog</h2>
+        </div>
+        <div class="col-md-10 col-sm-10 col-lg-10">
 
-                <% if(currentUser && currentUser.username === "alex"){ %>
-                    <p>
-                        <a class="btn btn-primary btn-large" href="/devblog/new">Add New Dev Post</a>
-                    </p>
-                    <% }%>
-                        <div class="card-columns">
+            <% if(currentUser && currentUser.username === "alex"){ %>
+                <p>
+                    <a class="btn btn-primary btn-large" href="/devblog/new">Add New Dev Post</a>
+                </p>
+                <% }%>
+                    <div class="card-columns">
 
-                            <% devPosts.forEach(function(post){ %>
-                                <div class="container">
-                                    <div id="posts" class="card rounded shadow">
+                        <% devPosts.forEach(function(post){ %>
+                            <div class="container">
+                                <div class="card rounded shadow posts">
 
-                                        <!-- <div class="card-img-top"> -->
-                                        <img class="item card-img" src="<%= post.image %>">
-                                        <div class="card-block">
-                                            <h4 class="card-title">
-                                                <%= post.name %>
-                                            </h4>
-                                            <p class="card-text">
-                                                <%= post.description %>
-                                            </p>
-                                            <p style="margin: 20px 1%">
-                                                <a href="/devblog/<%= post._id %>" id="readMore" class="btn btn-primary">Read more &rarr;</a>
-                                            </p>
-                                            <!-- </div> -->
+                                    <!-- <div class="card-img-top"> -->
+                                    <img class="item card-img" src="<%= post.image %>">
+                                    <div class="card-block">
+                                        <h4 class="card-title">
+                                            <%= post.name %>
+                                        </h4>
+                                        <p class="card-text">
+                                            <%= post.description %>
+                                        </p>
+                                        <p style="margin: 20px 1%">
+                                            <a href="/devblog/<%= post._id %>" class="btn btn-primary readMore">Read more &rarr;</a>
+                                        </p>
+                                        <!-- </div> -->
 
-                                        </div>
-                                        <div class="card-footer text-muted">
-                                            Posted on
-                                            <%= moment(post.createdOn).format('dddd DD/MM/YYYY');  %>
-                                                by
-                                                <%= post.author.username %>
-                                        </div>
                                     </div>
-                                    <!-- <hr> -->
+                                    <div class="card-footer text-muted">
+                                        Posted on
+                                        <%= moment(post.createdOn).format('dddd DD/MM/YYYY');  %>
+                                            by
+                                            <%= post.author.username %>
+                                    </div>
                                 </div>
+                                <!-- <hr> -->
+                            </div>
 
 
 
 
-                                <% }); %>
+                            <% }); %>
 
-                        </div>
-            </div>
-
-            <!-- Sidebar Widgets Column -->
-            <div class="col-md-2 col-sm-2 col-lg-2">
-
-                
-            </div>
+                    </div>
         </div>
 
+        <!-- Sidebar Widgets Column -->
+        <div class="col-md-2 col-sm-2 col-lg-2">
 
-        <div class="row">
-            <div class="col-md-12">
-                <!-- Pagination -->
-                <div class="container text-center">
-                    <ul class="pagination">
-                        <li>
-                            <% for(var i = 0; i < pages; i++) { %>
-                                <% if(i===0) { %>
-                                    <li>Pages:
-                                        <a href="/devblog">
+
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Pagination -->
+            <div class="container text-center">
+                <ul class="pagination">
+                    <li>
+                        <% for(var i = 0; i < pages; i++) { %>
+                            <% if(i===0) { %>
+                                <li>Pages:
+                                    <a href="/devblog">
+                                        <%= i %>
+                                    </a>
+                                </li>
+                                <% } else { %>
+                                    <li>
+                                        <a href="/devblog/page/<%= i %>"> -
                                             <%= i %>
                                         </a>
                                     </li>
-                                    <% } else { %>
-                                        <li><a href="/devblog/page/<%= i %>"> - <%= i %></a></li>
+                                    <% } %>
                                         <% } %>
-                                            <% } %>
-                        </li>
-                    </ul>
+                    </li>
+                </ul>
 
 
-                </div>
             </div>
-
         </div>
+
+    </div>
 
 
 

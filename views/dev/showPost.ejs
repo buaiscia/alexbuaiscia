@@ -15,9 +15,9 @@
                     </a>
                 </h4>
                 <p>
-                    <em class="float-right" id="submittedby">Submitted by <%= devPost.author.username %> on <%= moment(devPost.createdOn).format('dddd DD/MM/YYYY');  %></em>
+                    <em class="submittedby">Submitted by <%= devPost.author.username %> on <%= moment(devPost.createdOn).format('dddd DD/MM/YYYY');  %></em>
                 </p>
-                <img id="postImage" class="img-responsive float-left" src="<%= devPost.image %>">
+                <img class="img-responsive float-right postImageDev" src="<%= devPost.image %>">
                 <div class="postText">
                     <p>
                         <%- devPost.text %>
@@ -41,7 +41,7 @@
                     <hr>
                     <% devPost.comments.forEach(function(comment){ %>
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-12 comment">
                                 <strong><%= comment.author.username %></strong> on
                                 <strong><%= moment(comment.createdOn).format('dddd DD/MM/YYYY');  %></strong>
                                 <br><br>

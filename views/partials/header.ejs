@@ -5,7 +5,7 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="space news and dev">
+    <meta name="description" content="space news and information">
     <meta name="author" content="Alex Buaiscia">
 
 
@@ -29,17 +29,7 @@
         });
     
     </script>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-137267647-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-137267647-1');
-	  gtag('config', 'UA-137267647-2');
-	</script>
-
+    
 
 </head>
 
@@ -47,10 +37,10 @@
     <header>
 
 
-        <div id="navStyle" class="container-fluid px-0">
+        <div class="container-fluid px-2 navStyle">
 
             <nav class="navbar navbar-expand-xl navbar-light" role="navigation">
-                    <a style="font-family: 'Dancing Script', cursive; font-size: 40px;" class="navbar-brand" href="#">Alex Buaiscia</a>
+                    <a style="font-family: 'Dancing Script', cursive; font-size: 40px;" class="navbar-brand" href="/">Alex Buaiscia</a>
 
                 <div class="navbar-header">
 
@@ -63,8 +53,8 @@
 
 
                     <ul style="margin: auto;" class="nav navbar-nav navbar-left">
-                        <li><a class="nav-item nav-link active" href="/">Home</a></li>
-                        <li class="nav-item dropdown">
+                        <!-- <li><a class="nav-item nav-link active" href="/">Home</a></li> -->
+                        <!-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle disabled" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Scrittura
                                   </a>
@@ -73,12 +63,25 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Blog di scrittura</a>
                             </div>
-                        </li>
-                        <li class="nav-item">
+                        </li> -->
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="/spaceblog">Spaceblog</a>
+                        </li> -->
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/devlife">Dev Life</a>
+                        </li>
+                        
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/portfolio">Portfolio</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/devblog">Dev Blog</a>
                         </li>
 
-                        <li class="nav-item dropdown">
+                        <!-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Dev life
                                   </a>
@@ -89,7 +92,7 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item disabled" href="#">Curriculum</a>
                             </div>
-                        </li>
+                        </li> -->
                     </ul>
 
 
@@ -119,7 +122,7 @@
 
 
 
-        <div id="alerts" class="container-fluid">
+        <div class="container-fluid alerts">
 
             <% if(error && error.length > 0){ %>
                 <div class="alert alert-danger" role="alert">

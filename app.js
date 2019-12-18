@@ -48,15 +48,16 @@ const indexRoute = require("./routes/index");
 // const publishedRoute = require('./routes/writing/published'),
 //     blogWritingRoute = require('./routes/writing/writingblog');
 
-// SPACE ROUTE
+// // SPACE ROUTE
 
-const spaceBlogRoute = require('./routes/space/spaceblog');
-const spaceCommentRoute = require('./routes/space/comments');
+// const spaceBlogRoute = require('./routes/space/spaceblog');
+// const spaceCommentRoute = require('./routes/space/comments');
 
 
 // DEV ROUTE
 
 const devlifeRoute = require('./routes/dev/devlife');
+const portfolio = require('./routes/dev/portfolio')
 const devblogRoute = require('./routes/dev/devblog');
 const devCommentRoute = require('./routes/dev/devcomments');
 
@@ -87,9 +88,10 @@ app.use(function(req, res, next) {
 app.use('/', indexRoute);
 // app.use('/pubblicazioni', publishedRoute);
 // app.use('/scritturablog', blogWritingRoute);
-app.use('/spaceblog', spaceBlogRoute);
-app.use('/spaceBlog/:id/comments', spaceCommentRoute);
+// app.use('/spaceblog', spaceBlogRoute);
+// app.use('/spaceBlog/:id/comments', spaceCommentRoute);
 app.use('/devlife', devlifeRoute);
+app.use('/portfolio', portfolio)
 app.use('/devblog', devblogRoute);
 app.use('/devblog/:id/devcomment', devCommentRoute);
 
