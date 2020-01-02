@@ -13,24 +13,31 @@
     <style>
         @import url('https://fonts.googleapis.com/css?family=Tangerine|Libre+Baskerville|Old+Standard+TT|Monoton|Dancing+Script|Cinzel');
     </style>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
     <link href="http://cdn.phpoll.com/css/animate.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"
+    />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="/stylesheets/main.css">
 
     <script src="https://cloud.tinymce.com/5/tinymce.min.js"></script>
     <script>
-    tinymce.init({
-        selector: "textarea",  
-        height: 600,
-        plugins: "codesample code",
-        toolbar: "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | codesample | code"
+        tinymce.init({
+            selector: "textarea",
+            height: 600,
+            plugins: "codesample code",
+            toolbar: "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | codesample | code"
         });
-    
+
     </script>
-    
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+
 
 </head>
 
@@ -41,13 +48,14 @@
         <div class="container-fluid px-2 navStyle">
 
             <nav class="navbar navbar-expand-xl navbar-light" role="navigation">
-                    <a style="font-family: 'Dancing Script', cursive; font-size: 40px;" class="navbar-brand" href="/">Alex Buaiscia</a>
+                <a style="font-family: 'Dancing Script', cursive; font-size: 40px;" class="navbar-brand" href="/">Alex Buaiscia</a>
 
                 <div class="navbar-header">
 
-                    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                              <span class="navbar-toggler-icon"></span>
-                            </button>
+                    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
                 </div>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -68,16 +76,16 @@
                         <!-- <li class="nav-item">
                             <a class="nav-link" href="/spaceblog">Spaceblog</a>
                         </li> -->
-                        
+
                         <li class="nav-item">
                             <a class="nav-link" href="/devlife">Dev Life</a>
                         </li>
-                        
-                        
+
+
                         <li class="nav-item">
                             <a class="nav-link" href="/portfolio">Portfolio</a>
                         </li>
-                        
+
                         <li class="nav-item">
                             <a class="nav-link" href="/devblog">Dev Blog</a>
                         </li>
@@ -102,15 +110,24 @@
                 <div id="navbarSupportedContent" class="signButtons collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <% if(!currentUser){ %>
-                            <li><a class="btn btn-outline-info" href="/login">LOGIN  &nbsp; </a></li>
+                            <li>
+                                <a class="btn btn-outline-info" href="/login">LOGIN &nbsp; </a>
+                            </li>
                             <div class="divider"></div>
-                            <li><a class="btn btn-outline-info" href="/register">SIGN UP  &nbsp; </a></li>
+                            <li>
+                                <a class="btn btn-outline-info" href="/register">SIGN UP &nbsp; </a>
+                            </li>
                             <% } else { %>
-                                <li style="padding-top: 5px;"><a href="#">Signed In as <%= currentUser.username %>  &nbsp; </a></li>
+                                <li style="padding-top: 5px;">
+                                    <a href="#">Signed In as
+                                        <%= currentUser.username %> &nbsp; </a>
+                                </li>
                                 <div class="divider"></div>
                                 <div class="divider"></div>
                                 <div class="divider"></div>
-                                <li><a class="btn btn-outline-info" href="/logout">Logout  &nbsp; </a></li>
+                                <li>
+                                    <a class="btn btn-outline-info" href="/logout">Logout &nbsp; </a>
+                                </li>
                                 <% } %>
                     </ul>
                 </div>
@@ -137,7 +154,7 @@
                         <% } %>
         </div>
 
-        
+
 
     </header>
     <main>
