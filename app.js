@@ -21,14 +21,17 @@ app.locals.moment = require('moment');
 
 
 var http = require("http");
-setInterval(function() {
+setInterval(function () {
     http.get("http://alexbuaiscia.herokuapp.com/");
 }, 300000); // every 5 minutes (300000)
 
 // SETTING OTHER STUFF
 
 var url = process.env.DATABASEURL || "mongodb://localhost:27017/alexDB"
-mongoose.connect(url, { useNewUrlParser: true });
+mongoose.connect(url, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
@@ -78,7 +81,7 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     res.locals.currentUser = req.user;
     res.locals.error = req.flash("error");
     res.locals.success = req.flash("success")
@@ -99,13 +102,13 @@ app.use('/devblog', devblogRoute);
 app.use('/devblog/:id/devcomment', devCommentRoute);
 
 
-app.get('*', function(req, res) {
+app.get('*', function (req, res) {
     res.status(404).send('what are you doing here???');
 });
 
 // SERVER
 
-app.listen(process.env.PORT || 5000, function() {
+app.listen(process.env.PORT || 5000, function () {
     console.log("server started on port 5000");
 });
 
