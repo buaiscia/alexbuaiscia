@@ -1,10 +1,8 @@
 const express = require("express"),
     router = express.Router(),
-    bodyParser = require("body-parser"),
     moment = require("moment"),
     spacePost = require("../../models/spacePost"),
-    middleware = require("../../middleware"),
-    fs = require('fs');
+    middleware = require("../../middleware");
 
 // seedDB = require("../../seeds");
 
@@ -26,7 +24,7 @@ function paginate(req, res, next) {
                 res.render("space/spaceblog", {
                     spacePosts: allPosts,
                     pages: count / perPage,
-                    page: 'spaceblog'
+                    page: "spaceblog"
                 });
             });
 
@@ -43,7 +41,7 @@ router.get("/", function(req, res, next) {
 
 router.get("/page/:page", function(req, res, next) {
     paginate(req, res, next);
-})
+});
 
 // CREATE POST 
 
@@ -56,7 +54,7 @@ router.post("/", middleware.isLoggedIn, function(req, res) {
     var author = {
         id: req.user._id,
         username: req.user.username
-    }
+    };
 
 
     var postedTime = req.body.date;
@@ -70,24 +68,24 @@ router.post("/", middleware.isLoggedIn, function(req, res) {
         text: text,
         author: author,
         createdOn: createdOn
-    }
-    spacePost.create(newPost, function(err, newlyCreated) {
+    };
+    spacePost.create(newPost, function(err) {
         if (err) {
             console.log(err);
         } else {
-            res.redirect("/spaceblog")
+            res.redirect("/spaceblog");
 
         }
-    })
+    });
 });
 
 //UPLOAD IMAGE ROUTE
 
-router.post('/upload_images', (req, res, next) => {
-    let formidable = require('formidable');
+router.post("/upload_images", (req, res) => {
+    let formidable = require("formidable");
     //parse a file upload
     var form = new formidable.IncomingForm();
-    form.uploadDir = './public/img';
+    form.uploadDir = "./public/img";
     form.keepExtensions = true;
     form.maxFieldsSize = 10 * 1024 * 1024; // 10 MB
     form.multiples = true;
@@ -104,7 +102,7 @@ router.post('/upload_images', (req, res, next) => {
             var fileNames = [];
             arrayOfFiles.forEach(eachfile => {
                 // fileNames.push(eachfile.path);
-                fileNames.push(eachfile.path.split('\\')[2]);
+                fileNames.push(eachfile.path.split("\\")[2]);
             });
             res.json({
                 result: "ok",
@@ -120,7 +118,7 @@ router.post('/upload_images', (req, res, next) => {
                 message: "No images to upload"
             });
         }
-    })
+    });
 
 });
 
@@ -139,7 +137,7 @@ router.get("/:id", function(req, res) {
             req.flash("error", "Post not found");
             res.redirect("back");
         } else {
-            console.log(foundSpacePost)
+            console.log(foundSpacePost);
             res.render("space/showSpacePost", { spacePost: foundSpacePost });
         }
     });
@@ -150,13 +148,13 @@ router.get("/:id", function(req, res) {
 router.get("/:id/edit", middleware.checkSpacePostOwnership, function(req, res) {
     spacePost.findById(req.params.id, function(err, foundSpacePost) {
         res.render("space/edit", { spacePost: foundSpacePost });
-    })
-})
+    });
+});
 
 // UPDATE POST ROUTE
 
 router.put("/:id", middleware.checkSpacePostOwnership, function(req, res) {
-    spacePost.findByIdAndUpdate(req.params.id, req.body.spacePost, function(err, updatedSpacePost) {
+    spacePost.findByIdAndUpdate(req.params.id, req.body.spacePost, function(err) {
         if (err) {
             res.redirect("/spaceblog");
         } else {
@@ -175,8 +173,8 @@ router.delete("/:id", middleware.checkSpacePostOwnership, function(req, res) {
             req.flash("success", "Post deleted");
             res.redirect("/spaceBlog");
         }
-    })
-})
+    });
+});
 
 
 

@@ -20,7 +20,7 @@ var data = [{
         description: "Questo e'il sole",
         text: "blabla3"
     }
-]
+];
 
 function seedDB() {
     //Remove all campgrounds
@@ -33,7 +33,7 @@ function seedDB() {
         data.forEach(function(seed) {
             spacePost.create(seed, function(err, spacePost) {
                 if (err) {
-                    console.log(err)
+                    console.log(err);
                 } else {
                     console.log("added a space post");
                     //create a comment

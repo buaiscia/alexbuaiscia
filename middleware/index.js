@@ -11,7 +11,7 @@ middlewareObj.checkSpacePostOwnership = function(req, res, next) {
     if (req.isAuthenticated()) {
         spacePost.findById(req.params.id, function(err, foundPost) {
             if (err || !foundPost) {
-                req.flash("error", "Post not found")
+                req.flash("error", "Post not found");
                 res.redirect("back");
             } else {
                 // does user own the post?
@@ -27,7 +27,7 @@ middlewareObj.checkSpacePostOwnership = function(req, res, next) {
         req.flash("error", "You need to be logged in");
         res.redirect("back");
     }
-}
+};
 
 middlewareObj.checkCommentOwnership = function(req, res, next) {
     if (req.isAuthenticated()) {
@@ -49,7 +49,7 @@ middlewareObj.checkCommentOwnership = function(req, res, next) {
         req.flash("error", "You need to be logged in");
         res.redirect("back");
     }
-}
+};
 
 
 
@@ -57,7 +57,7 @@ middlewareObj.checkDevPostOwnership = function(req, res, next) {
     if (req.isAuthenticated()) {
         devPost.findById(req.params.id, function(err, foundPost) {
             if (err || !foundPost) {
-                req.flash("error", "Post not found")
+                req.flash("error", "Post not found");
                 res.redirect("back");
             } else {
                 // does user own the post?
@@ -73,7 +73,7 @@ middlewareObj.checkDevPostOwnership = function(req, res, next) {
         req.flash("error", "You need to be logged in");
         res.redirect("back");
     }
-}
+};
 
 middlewareObj.checkDevCommentOwnership = function(req, res, next) {
     if (req.isAuthenticated()) {
@@ -95,7 +95,7 @@ middlewareObj.checkDevCommentOwnership = function(req, res, next) {
         req.flash("error", "You need to be logged in");
         res.redirect("back");
     }
-}
+};
 
 
 middlewareObj.isLoggedIn = function(req, res, next) {
@@ -107,6 +107,6 @@ middlewareObj.isLoggedIn = function(req, res, next) {
     req.flash("error", "You need to be logged in");
     // req.session.returnTo = req.originalUrl;
     res.redirect("/login");
-}
+};
 
 module.exports = middlewareObj;

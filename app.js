@@ -8,14 +8,14 @@ const express = require("express"),
     passport = require("passport"),
     LocalStrategy = require("passport-local"),
     methodOverride = require("method-override"),
-    spacePost = require("./models/spacePost"),
-    Comment = require("./models/spaceComment"),
-    devPost = require("./models/devPost"),
-    devComment = require("./models/devComment"),
+    // spacePost = require("./models/spacePost"),
+    // Comment = require("./models/spaceComment"),
+    // devPost = require("./models/devPost"),
+    // devComment = require("./models/devComment"),
     User = require("./models/user"),
-    compression = require('compression'),
-    helmet = require('helmet');
-app.locals.moment = require('moment');
+    compression = require("compression"),
+    helmet = require("helmet");
+app.locals.moment = require("moment");
 
 // seedDB = require("./seeds");
 
@@ -27,7 +27,7 @@ setInterval(function () {
 
 // SETTING OTHER STUFF
 
-var url = process.env.DATABASEURL || "mongodb://localhost:27017/alexDB"
+var url = process.env.DATABASEURL || "mongodb://localhost:27017/alexDB";
 mongoose.connect(url, {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -62,10 +62,10 @@ const indexRoute = require("./routes/index");
 
 // DEV ROUTE
 
-const devlifeRoute = require('./routes/dev/devlife');
-const portfolio = require('./routes/dev/portfolio')
-const devblogRoute = require('./routes/dev/devblog');
-const devCommentRoute = require('./routes/dev/devcomments');
+const devlifeRoute = require("./routes/dev/devlife");
+const portfolio = require("./routes/dev/portfolio");
+const devblogRoute = require("./routes/dev/devblog");
+const devCommentRoute = require("./routes/dev/devcomments");
 
 
 // PASSPORT CONFIGURATION
@@ -84,26 +84,26 @@ passport.deserializeUser(User.deserializeUser());
 app.use(function (req, res, next) {
     res.locals.currentUser = req.user;
     res.locals.error = req.flash("error");
-    res.locals.success = req.flash("success")
+    res.locals.success = req.flash("success");
     next();
 });
 
 
 // USING ROUTES
 
-app.use('/', indexRoute);
+app.use("/", indexRoute);
 // app.use('/pubblicazioni', publishedRoute);
 // app.use('/scritturablog', blogWritingRoute);
 // app.use('/spaceblog', spaceBlogRoute);
 // app.use('/spaceBlog/:id/comments', spaceCommentRoute);
-app.use('/devlife', devlifeRoute);
-app.use('/portfolio', portfolio)
-app.use('/devblog', devblogRoute);
-app.use('/devblog/:id/devcomment', devCommentRoute);
+app.use("/devlife", devlifeRoute);
+app.use("/portfolio", portfolio);
+app.use("/devblog", devblogRoute);
+app.use("/devblog/:id/devcomment", devCommentRoute);
 
 
-app.get('*', function (req, res) {
-    res.status(404).send('what are you doing here???');
+app.get("*", function (req, res) {
+    res.status(404).send("what are you doing here???");
 });
 
 // SERVER

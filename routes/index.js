@@ -13,7 +13,7 @@ router.get("/", function(req, res) {
 
 // show register form
 router.get("/register", function(req, res) {
-    res.render("register", { page: 'register' });
+    res.render("register", { page: "register" });
 });
 
 //handle sign up logic
@@ -26,14 +26,14 @@ router.post("/register", function(req, res) {
         }
         passport.authenticate("local")(req, res, function() {
             req.flash("success", "Welcome to my site " + user.username);
-            res.redirect(req.session.redirectTo || '/');
+            res.redirect(req.session.redirectTo || "/");
         });
     });
 });
 
 //show login form
 router.get("/login", function(req, res) {
-    res.render("login", { page: 'login' });
+    res.render("login", { page: "login" });
 });
 
 //handling login logic
@@ -47,27 +47,27 @@ router.get("/login", function(req, res) {
 //     failureFlash: true
 // }));
 
-router.post('/login', function(req, res, next) {
-    passport.authenticate('local', function(err, user, info) {
+router.post("/login", function(req, res, next) {
+    passport.authenticate("local", function(err, user, info) {
         if (err) {
             next(err);
-            return
+            return;
         }
         // User does not exist
         if (!user) {
-            req.flash('error', 'Invalid username or password');
-            res.redirect('/login');
-            return
+            req.flash("error", "Invalid username or password");
+            res.redirect("/login");
+            return;
         }
         req.logIn(user, function(err) {
             // Invalid password
             if (err) {
-                req.flash('error', 'Invalid username or password');
+                req.flash("error", "Invalid username or password");
                 next(err);
-                return
+                return;
             }
-            res.redirect(req.session.redirectTo || '/');
-            return
+            res.redirect(req.session.redirectTo || "/");
+            return;
         });
     })(req, res, next);
 });

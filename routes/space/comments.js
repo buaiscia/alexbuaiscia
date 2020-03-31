@@ -1,6 +1,5 @@
 const express = require("express"),
     router = express.Router({ mergeParams: true }),
-    bodyParser = require("body-parser"),
     spacePost = require("../../models/spacePost"),
     Comment = require("../../models/spaceComment"),
     middleware = require("../../middleware");
@@ -14,12 +13,12 @@ const express = require("express"),
 router.get("/new", middleware.isLoggedIn, function(req, res) {
     spacePost.findById(req.params.id, function(err, spacePost) {
         if (err || !spacePost) {
-            req.flash("error", "Post not found")
+            req.flash("error", "Post not found");
             res.redirect("back");
         } else {
             res.render("comments/new", { spacePost: spacePost });
         }
-    })
+    });
 });
 
 router.post("/", middleware.isLoggedIn, function(req, res) {
@@ -40,7 +39,7 @@ router.post("/", middleware.isLoggedIn, function(req, res) {
                     spacePost.save();
                     console.log(comment);
                     req.flash("success", "Successfully added comment");
-                    res.redirect('/spaceblog/' + spacePost._id);
+                    res.redirect("/spaceblog/" + spacePost._id);
                 }
             });
         }
@@ -68,7 +67,7 @@ router.get("/:comment_id/edit", middleware.checkCommentOwnership, function(req, 
 
 // COMMENT UPDATE
 router.put("/:comment_id", middleware.checkCommentOwnership, function(req, res) {
-    Comment.findByIdAndUpdate(req.params.comment_id, req.body.comment, function(err, updatedComment) {
+    Comment.findByIdAndUpdate(req.params.comment_id, req.body.comment, function(err) {
         if (err) {
             res.redirect("back");
         } else {

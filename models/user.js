@@ -8,6 +8,6 @@ var UserSchema = new mongoose.Schema({
     email: String
 });
 
-UserSchema.plugin(passportLocalMongoose)
+UserSchema.plugin(passportLocalMongoose);
 
 module.exports = mongoose.model("User", UserSchema);

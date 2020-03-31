@@ -1,6 +1,5 @@
 const express = require("express"),
     router = express.Router(),
-    bodyParser = require("body-parser"),
     moment = require("moment"),
     devPost = require("../../models/devPost"),
     middleware = require("../../middleware");
@@ -24,7 +23,7 @@ function paginate(req, res, next) {
                 res.render("dev/devblog", {
                     devPosts: allPosts,
                     pages: count / perPage,
-                    page: 'devblog'
+                    page: "devblog"
                 });
             });
 
@@ -41,7 +40,7 @@ router.get("/", function(req, res, next) {
 
 router.get("/page/:page", function(req, res, next) {
     paginate(req, res, next);
-})
+});
 
 // CREATE POST 
 
@@ -54,7 +53,7 @@ router.post("/", middleware.isLoggedIn, function(req, res) {
     var author = {
         id: req.user._id,
         username: req.user.username
-    }
+    };
 
 
     var postedTime = req.body.date;
@@ -68,15 +67,15 @@ router.post("/", middleware.isLoggedIn, function(req, res) {
         text: text,
         author: author,
         createdOn: createdOn
-    }
-    devPost.create(newDevPost, function(err, newlyCreated) {
+    };
+    devPost.create(newDevPost, function(err) {
         if (err) {
             console.log(err);
         } else {
-            res.redirect("/devblog")
+            res.redirect("/devblog");
 
         }
-    })
+    });
 });
 
 //FORM FOR NEW POST
@@ -93,7 +92,7 @@ router.get("/:id", function(req, res) {
             req.flash("error", "Post not found");
             res.redirect("back");
         } else {
-            console.log(foundDevPost)
+            console.log(foundDevPost);
             res.render("dev/showPost", { devPost: foundDevPost });
         }
     });
@@ -104,13 +103,13 @@ router.get("/:id", function(req, res) {
 router.get("/:id/edit", middleware.checkDevPostOwnership, function(req, res) {
     devPost.findById(req.params.id, function(err, foundDevPost) {
         res.render("dev/edit", { devPost: foundDevPost });
-    })
-})
+    });
+});
 
 // UPDATE POST ROUTE
 
 router.put("/:id", middleware.checkDevPostOwnership, function(req, res) {
-    devPost.findByIdAndUpdate(req.params.id, req.body.devPost, function(err, updatedDevPost) {
+    devPost.findByIdAndUpdate(req.params.id, req.body.devPost, function(err) {
         if (err) {
             res.redirect("/devblog");
         } else {
@@ -129,8 +128,8 @@ router.delete("/:id", middleware.checkDevPostOwnership, function(req, res) {
             req.flash("success", "Post deleted");
             res.redirect("/devblog");
         }
-    })
-})
+    });
+});
 
 
 

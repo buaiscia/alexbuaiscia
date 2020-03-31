@@ -1,6 +1,5 @@
 const express = require("express"),
     router = express.Router({ mergeParams: true }),
-    bodyParser = require("body-parser"),
     devPost = require("../../models/devPost"),
     devComment = require("../../models/devComment"),
     middleware = require("../../middleware");
@@ -14,12 +13,12 @@ const express = require("express"),
 router.get("/new", middleware.isLoggedIn, function(req, res) {
     devPost.findById(req.params.id, function(err, devPost) {
         if (err || !devPost) {
-            req.flash("error", "Post not found")
+            req.flash("error", "Post not found");
             res.redirect("back");
         } else {
             res.render("devcomment/new", { devPost: devPost });
         }
-    })
+    });
 });
 
 router.post("/", middleware.isLoggedIn, function(req, res) {
@@ -40,7 +39,7 @@ router.post("/", middleware.isLoggedIn, function(req, res) {
                     devPost.save();
                     console.log(comment);
                     req.flash("success", "Successfully added comment");
-                    res.redirect('/devblog/' + devPost._id);
+                    res.redirect("/devblog/" + devPost._id);
                 }
             });
         }
@@ -68,7 +67,7 @@ router.get("/:comment_id/edit", middleware.checkDevCommentOwnership, function(re
 
 // COMMENT UPDATE
 router.put("/:comment_id", middleware.checkDevCommentOwnership, function(req, res) {
-    devComment.findByIdAndUpdate(req.params.comment_id, req.body.comment, function(err, updatedComment) {
+    devComment.findByIdAndUpdate(req.params.comment_id, req.body.comment, function(err) {
         if (err) {
             res.redirect("back");
         } else {
