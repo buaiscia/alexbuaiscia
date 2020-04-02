@@ -557,6 +557,15 @@ a:active {
     max-width: 600px;
     max-height: 300px;
     width: 100%;
+    transition: all 1s;
+}
+
+
+#projects img:hover {
+    /* -webkit-transform: scale(1.4, 1.4); */
+    transform: scale(1.1, 1.1);
+    /* animation: biggerImg 0.7s forwards; */
+    transition: transform 1s ease-in-out;
 }
 
 .portfolioimg {
@@ -645,12 +654,6 @@ a:active {
     text-align: center;
 }
 
-#projects img:hover {
-    /* -webkit-transform: scale(1.4, 1.4); */
-    transform: scale(1.1, 1.1);
-    /* animation: biggerImg 0.7s forwards; */
-    transition: transform 1s ease-in-out;
-}
 
 /* @keyframes biggerImg {
     100% {

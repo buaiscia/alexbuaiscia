@@ -29,6 +29,16 @@ router.get("/portal", function(req, res) {
     res.render("dev/portfolio/portal");
 });
 
+router.get("/movieDB", function(req, res) {
+
+    res.render("dev/portfolio/movieDB");
+});
+
+router.get("/restApi", function(req, res) {
+
+    res.render("dev/portfolio/restApi");
+});
+
 
 
 
