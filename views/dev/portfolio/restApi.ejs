@@ -4,15 +4,136 @@
         RESTful API
     </h2>
     <p class="descPortfolio">
-        Complete RESTful API. Make all CRUD operations from/to a DB, or upload a bulk file. All documented/testable through Swagger.
-        <br/>
-        <br/> ...
+        The application is a backend RESTful API with all CRUD operations using NodeJS, MongoDB for DB and Redis for caching. </p>
+    <table style="margin: auto; max-width: 60%;" class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">URL endpoint</th>
+                <th scope="col">HTTP REQ</th>
+                <th scope="col">RESULT</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>/movies</td>
+                <td>GET</td>
+                <td>all movies</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>/movies/:id</td>
+                <td>GET</td>
+                <td>one movie</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>/movies/:id/images/:type</td>
+                <td>GET</td>
+                <td>one movie image of type (poster, background, else)</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>/movies</td>
+                <td>POST</td>
+                <td>new movie created</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>/movies/:id </td>
+                <td>PATCH</td>
+                <td>movie fields edited</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>/movies/:id </td>
+                <td>DELETE</td>
+                <td>movie deleted</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>/upload/</td>
+                <td>GET</td>
+                <td>go to upload page</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>/upload/ </td>
+                <td>POST</td>
+                <td>upload JSON collection file</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>/api-docs</td>
+                <td>GET</td>
+                <td>Go to Swagger documentation</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="descPortfolio">
+        Every CRUD operation is documented and testable through Swagger (/api-docs). It's possible to make all requests and check
+        the schema to post/patch data inside. Pagination and queries are included and can be combined together:
     </p>
+    <table style="margin: auto; max-width: 60%;" class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">QUERY</th>
+                <th scope="col">FUNCTION</th>
+                <th scope="col">EXAMPLE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>search</td>
+                <td>search string among titles</td>
+                <td>/movies?search=star wars</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>genre</td>
+                <td>search string matching with genres</td>
+                <td>/movies?genre=scifi</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>page=&limit=</td>
+                <td>set visualized page and number of items per each page</td>
+                <td>/movies?page=1&limit=5</td>
+            </tr>
+
+        </tbody>
+    </table>
+    <p class="descPortfolio">
+        The project can be cloned and ran with or without Docker. The data is stored into a MongoDB. Redis is used to cache all GET
+        requests. Instructions and a Postman collection, with also an example of collection to import (manually through the
+        /upload page or via API) is available in the
+        <a href="https://github.com/buaiscia/rest_api" target="__blank">Github repository.</a>
+    </p>
+
+    <br/>
+    <br/>
+
+    <section class='links'>
+        <a href="https://restful-db-api.herokuapp.com/" target="__blank">
+            <h3>Live Demo</h3>
+        </a>
+        <a href="https://github.com/buaiscia/rest_api" target="__blank">
+            <h3>Repository on Github</h3>
+        </a>
+    </section>
+
+    <br/>
+
     <div style="text-align: center">
-        <img class="gif" src="../img/portal_opt.gif"></img>
+        <img style="max-width: 70%; margin: 2% 0;" src="../img/rest_api.png"></img>
     </div>
 
-    <h3>Skill set</h3>
+    <br/>
+
+    <h3 style="font-size: 2.2rem;">Skill set</h3>
     <section class='skillsetport'>
         <div>
             <p>Frontend</p>
@@ -20,37 +141,37 @@
             <p>
                 <img src="../img/if_html5_294678.svg" alt="HTML5">
                 <img src="../img/if_css3_294692.svg" alt="CSS3">
-                <img src="../img/JS.png" alt="JS">
-                <img src="../img/react.jpg" alt="React">
-
             </p>
         </div>
         <div>
             <p>Backend</p>
-            <p>NodeJS</p>
+            <p>NodeJS - Docker</p>
             <p>
                 <img src="../img/nodejs.png" alt="NodeJS">
+                <img src="../img/docker.png" alt="Docker">
             </p>
         </div>
         <div>
             <p>Storage</p>
-            <p>MongoDB</p>
-            <p>Redis (cache)</p>
+            <p>MongoDB - Redis</p>
+            <p>
+                <img src="../img/if_mongodb_1012822.svg" alt="MongoDB">
+                <img src="../img/redis.svg" alt="Redis">
+            </p>
         </div>
         <div>
             <p>Test</p>
-            <p>Mocha</p>
-            <p>Chai</p>
+            <p>Mocha - Chai</p>
             <p>
-                    <img src="../img/nodejs.png" alt="NodeJS">
-                </p>
+                <img src="../img/mocha.png" alt="Mocha">
+                <img src="../img/chai.png" alt="Mocha">
+            </p>
         </div>
 
     </section>
 
-    <a href="https://github.com/buaiscia/PortalTool" target="__blank">
-        <h3>Repository on Github</h3>
-    </a>
+
+
 
 
     <% include ../../partials/footer %>

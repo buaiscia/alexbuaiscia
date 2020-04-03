@@ -555,7 +555,7 @@ a:active {
 
 #projects img {
     max-width: 600px;
-    max-height: 300px;
+    max-height: 270px;
     width: 100%;
     transition: all 1s;
 }
@@ -595,7 +595,7 @@ a:active {
     text-align: center;
     width: 70%;
     display: grid;
-    grid-template-columns: repeat(3, 0.9fr);
+    grid-template-columns: repeat(4, 0.9fr);
     margin: auto;
 }
 
@@ -621,6 +621,28 @@ a:active {
 .toollist {
     margin: 0 7rem;
 }
+
+.links {
+    text-align: center;
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(2, 0.9fr);
+    margin: auto;
+}
+
+.links h3 {
+    padding-bottom: 0;
+    font-size: 2.2rem;
+}
+
+.links h3::after {
+    content: "→";
+    color: rgb(228, 88, 101);
+    position: relative;
+    left: 20px;
+    font-size: 30px;
+}
+
 
 /* .resizedImgPort {
     max-width: 80px; 
