@@ -1,32 +1,60 @@
-# alexbuaiscia
+Created in 2018 and constantly updated, the website is a partial show of my work working with vanillaJS with the support of NodeJS and NPM. Using the EJS engine to integrate JS in HTML, it includes both a frontend and a backend.
 
-#TODO:
-    
-    - add 'alert' of logoff
+The site is static, however it is built with a backbone of NodeJS (with Express) for routing, auth, connection to DB, modelling, security; in the blog section the data is stored on mongoDB (which manages the users and auth as well). 
 
-#MOBILE TODO:
+## Structure
 
-    - adj max-height on horizontal mode iphone/ipad + resize font
-    - maxheight hidden img restyle for horizontal mode (smaller)
-
-#feedback
-
-1) the devlife page has 2 headers which is confusing 
-2) There is a Log In/Sign up Button. But this doesn't make sense for a portfolio page
-3) On the Dev Blog, you have Pages mentioned as 0. Probably hide this?
-
- Couple things I notice, one on the splash page. It moves the footer down when you animate them. I think this footer should remain in the same position when the animations occur.There are some mobile issues with this section as well. I think the titles are supposed to remain hidden on mobile. But they display, and upon animation the height just gets taller. Of course I guess this would not occur on a true mobile device because you wouldn’t hover… But in say a split screen view where somebody has shrunk their browser down to half the screen width this would happen.Also on mobile at 320px wide, the blog page has some image overflow.Additionally, there are some console errors. It looks like the site is having some CORS problems fetching your twitter embed. Which is a little wierd because the widget does display. Maybe thats like, live streaming doesn’t work, so user would just have to refresh everytime they want a new feed. Something like that, thats my first guess. I ran into CORS problems on something I was working on the other day. The fix was to make the request serverside, in your Node/express code. Then fetch it client side from your server 
-
-I’m Trying to think about the best way to fix the footer thing. You could do something like this to keep it always at the bottom.
-footer {
- position: absolute;
- bottom: 0;
- width: 100%;
-}
-But thats not really your problem.
-Your problem is more that when you’r animation occurs, the height of your main content gets taller. My solution would probably end up being a little hacky lol. Something like put all the cards in a div with a fixed height. Making sure that they fit after the animation occurs. That way the footer position is based off the fixed height div instead of the total height of the above cards. Does that make sense? might not be the most elegant solution….
-
-
-#VERSION
+- [README.md](README.md)
+   - [app.js](app.js)
+   - __middleware__
+     - [index.js](middleware/index.js)
+   - __models__
+     - [devComment.js](models/devComment.js)
+     - [devPost.js](models/devPost.js)
+     - [user.js](models/user.js)
+   - [node\_modules](node_modules)
+   - [package\-lock.json](package-lock.json)
+   - [package.json](package.json)
+   - __public__
+     - __docs__
+       - [Alex\_Buaiscia\_CV.pdf](public/docs/Alex_Buaiscia_CV.pdf)
+     - __stylesheets__
+       - [main.css](public/stylesheets/main.css)
+   - __routes__
+     - __dev__
+       - [devblog.js](routes/dev/devblog.js)
+       - [devcomments.js](routes/dev/devcomments.js)
+       - [devlife.js](routes/dev/devlife.js)
+       - [portfolio.js](routes/dev/portfolio.js)
+     - [index.js](routes/index.js)
+   - [seeds.js](seeds.js)
+   - __views__
+     - __comments__
+       - [edit.ejs](views/comments/edit.ejs)
+       - [new.ejs](views/comments/new.ejs)
+     - __dev__
+       - [devblog.ejs](views/dev/devblog.ejs)
+       - [devlife.ejs](views/dev/devlife.ejs)
+       - [edit.ejs](views/dev/edit.ejs)
+       - [newPost.ejs](views/dev/newPost.ejs)
+       - __portfolio__
+         - [deploymentTool.ejs](views/dev/portfolio/deploymentTool.ejs)
+         - [movieDB.ejs](views/dev/portfolio/movieDB.ejs)
+         - [portal.ejs](views/dev/portfolio/portal.ejs)
+         - [restApi.ejs](views/dev/portfolio/restApi.ejs)
+         - [website.ejs](views/dev/portfolio/website.ejs)
+       - [portfolio.ejs](views/dev/portfolio.ejs)
+       - [showPost.ejs](views/dev/showPost.ejs)
+     - __devcomment__
+       - [edit.ejs](views/devcomment/edit.ejs)
+       - [new.ejs](views/devcomment/new.ejs)
+     - [landing.ejs](views/landing.ejs)
+     - [login.ejs](views/login.ejs)
+     - __partials__
+       - [footer.ejs](views/partials/footer.ejs)
+       - [header.ejs](views/partials/header.ejs)
+     - [register.ejs](views/register.ejs)
+ 
+###VERSION
 
     2

@@ -553,6 +553,11 @@ a:active {
     font-size: 6rem;
 }
 
+.landingCards {
+    padding: 7% 5%;
+    height: 70vh;
+}
+
 #projects img {
     max-width: 600px;
     max-height: 270px;
@@ -582,9 +587,24 @@ a:active {
 }
 
 .gif {
-    max-width: 700px;
+    max-width: 1200px;
     max-height: auto;
     padding: 50px;
+}
+
+@-moz-document url-prefix() {  
+    .gif{
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {    
+     .gif{
+        max-width: 100%;
+    }    
 }
 
 .descPortfolio {
@@ -872,6 +892,15 @@ form > div {
     }
     .links h3 {
         padding: 5% 0;
+    }
+    .landingCards {
+        height: 120vh;
+    }
+    .entry:hover {
+        -webkit-box-flex: auto;
+        -ms-flex:  auto;
+        flex:  auto;
+        padding: 0;
     }
 }
 
