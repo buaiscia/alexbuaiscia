@@ -23,7 +23,7 @@
     "froala-editor": "^2.9.3",
     "helmet": "^3.21.2",
     "method-override": "^3.0.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "mongoose": "^5.7.5",
     "mongoose-paginate": "^5.0.3",
     "nodemon": "^2.0.3",
